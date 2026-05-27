@@ -7,7 +7,7 @@
     <meta name="description" content="Chaîne YouTube dédiée aux personnages secondaires du cinéma et des séries. Analyse, passion, cinéphilie.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
 
     <style>
@@ -18,16 +18,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-        --red:       #e84c3d;
-        --red-dk:    #c0392b;
-        --black:     #1c1c1c;
-        --dark:      #111;
-        --dark-2:    #181818;
-        --grey:      #777;
-        --grey-lt:   #bbb;
-        --cream:     #f0ede7;
-        --white:     #fff;
-        --border:    #e3e0db;
+        --red:       #8B2010;
+        --red-dk:    #661508;
+        --gold:      #D89634;
+        --gold-lt:   #e8a93f;
+        --black:     #241B14;
+        --dark:      #1a1208;
+        --dark-2:    #211610;
+        --grey:      #8a7a6a;
+        --grey-lt:   #b5a898;
+        --cream:     #f5efe6;
+        --white:     #fdf8f2;
+        --border:    #3a2e24;
         --section-p: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
     }
 
@@ -53,7 +55,7 @@
             transition-duration: .01ms !important;
         }
         .reveal    { opacity: 1; transform: none; }
-        .hero-img  { transform: translateY(-182px) !important; }
+        .hero-img  { transform: translateY(-189px) !important; }
     }
 
     /* ══════════════════════════════════════════════
@@ -126,17 +128,27 @@
     }
     .mobile-menu__close svg { width: 16px; height: 16px; fill: var(--white); }
 
-    .mobile-menu__logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: .3em; }
+    .mobile-menu__logo {
+        font-family: 'SignPainter', 'SignPainter HouseScript', cursive;
+        font-size: 1.25rem; letter-spacing: .03em;
+        display: flex; align-items: center; gap: .5rem;
+        text-decoration: none; color: var(--white);
+        line-height: 1.2;
+    }
+    .mobile-menu__logo img {
+        width: 40px; height: 40px; flex-shrink: 0;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,.4));
+    }
     .mobile-menu__nav  { display: flex; flex-direction: column; gap: .2rem; }
     .mobile-menu__nav a {
         font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: .12em;
         padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.08);
         transition: color .2s, padding-left .2s;
     }
-    .mobile-menu__nav a:hover { color: var(--red); padding-left: .4rem; }
+    .mobile-menu__nav a:hover { color: var(--gold); padding-left: .4rem; }
     .mobile-menu__social { display: flex; gap: 1rem; }
     .mobile-menu__social a { color: var(--grey-lt); transition: color .2s; }
-    .mobile-menu__social a:hover { color: var(--red); }
+    .mobile-menu__social a:hover { color: var(--gold); }
     .mobile-menu__social svg { width: 18px; height: 18px; fill: currentColor; display: block; }
 
     /* ══════════════════════════════════════════════
@@ -193,11 +205,32 @@
     .nav-burger:hover span { background: var(--white); }
 
     .nav-logo {
-        font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: .28em;
+        font-family: 'SignPainter', 'SignPainter HouseScript', cursive;
+        font-size: 1.6rem; letter-spacing: .04em;
         text-shadow: 0 2px 12px rgba(0,0,0,.5);
-        display: flex; align-items: center; gap: .5rem;
+        display: flex; align-items: center; gap: .6rem;
     }
-    .nav-logo .bar { display: inline-block; width: 22px; height: 10px; background: var(--red); flex-shrink: 0; }
+    .nav-logo-img {
+        width: 36px; height: 36px; flex-shrink: 0;
+        filter: drop-shadow(0 2px 12px rgba(0,0,0,.55));
+        transition: transform .35s cubic-bezier(.22,1,.36,1);
+    }
+    .nav-logo:hover .nav-logo-img { transform: scale(1.12) rotate(-6deg); }
+
+    .footer-logo-link {
+        display: inline-flex; align-items: center; gap: .5rem;
+        font-family: 'SignPainter', 'SignPainter HouseScript', cursive;
+        font-size: 1.2rem; letter-spacing: .03em;
+        color: var(--white); margin-bottom: 1.2rem;
+        text-decoration: none; transition: opacity .2s;
+    }
+    .footer-logo-link:hover { opacity: .82; }
+    .footer-logo-img {
+        width: 32px; height: 32px; flex-shrink: 0;
+        filter: drop-shadow(0 1px 6px rgba(0,0,0,.4));
+        transition: transform .3s cubic-bezier(.22,1,.36,1);
+    }
+    .footer-logo-link:hover .footer-logo-img { transform: scale(1.1) rotate(-5deg); }
 
     .nav-icons { display: flex; align-items: center; gap: 1.3rem; }
     .nav-icons a, .nav-icons button { color: rgba(255,255,255,.75); transition: color .2s; display: flex; align-items: center; }
@@ -221,14 +254,17 @@
     .hero::before {
         content: '';
         position: absolute; inset: 0; z-index: 2;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
-        opacity: .55; pointer-events: none;
+        background:
+            radial-gradient(ellipse at 18% 15%, rgba(139,32,16,.28) 0%, transparent 52%),
+            radial-gradient(ellipse at 82% 80%, rgba(216,150,52,.08) 0%, transparent 45%),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+        pointer-events: none;
     }
     .hero::after {
         content: ''; position: absolute; inset: 0; z-index: 3;
         background:
-            linear-gradient(to bottom, rgba(0,0,0,.55) 0%, transparent 28%, transparent 42%, rgba(0,0,0,.92) 100%),
-            linear-gradient(to right, rgba(0,0,0,.4) 0%, transparent 55%);
+            linear-gradient(to bottom, rgba(26,18,8,.65) 0%, transparent 26%, transparent 38%, rgba(26,18,8,.96) 100%),
+            linear-gradient(to right, rgba(26,18,8,.55) 0%, transparent 60%);
         pointer-events: none;
     }
     .hero-accent { display: none; }
@@ -243,13 +279,17 @@
         opacity: 0; animation: fadeIn .7s .5s ease both;
     }
     .hero-caption h1 {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: clamp(3.5rem, 6vw, 6rem);
-        letter-spacing: .04em; line-height: .9;
+        font-family: 'SignPainter', 'SignPainter HouseScript', 'Bebas Neue', cursive;
+        font-size: clamp(3.8rem, 7vw, 7rem);
+        letter-spacing: .02em; line-height: .95;
         text-shadow: 0 4px 28px rgba(0,0,0,.7);
         opacity: 0; animation: fadeUp .9s .7s cubic-bezier(.22,1,.36,1) both;
     }
-    .hero-caption h1 em { font-style: normal; color: rgba(255,255,255,.38); }
+    .hero-caption h1 em {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic; font-weight: 600;
+        color: var(--gold); font-size: .82em; letter-spacing: .06em;
+    }
     .hero-caption .sub {
         font-size: .88rem; letter-spacing: .04em; margin-top: 1.1rem;
         max-width: 480px; line-height: 1.65; font-weight: 300; color: rgba(255,255,255,.85);
@@ -286,7 +326,8 @@
         border-bottom: 1px solid var(--border); padding-bottom: 2rem; margin-bottom: 2.5rem;
     }
     .profile-title h2 {
-        font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: .04em; line-height: 1;
+        font-family: 'SignPainter', 'SignPainter HouseScript', 'Bebas Neue', cursive;
+        font-size: 3.2rem; letter-spacing: .02em; line-height: 1;
     }
     .profile-cat { margin-top: .8rem; display: flex; gap: .5rem; flex-wrap: wrap; }
     .profile-cat span {
@@ -339,7 +380,7 @@
     .info-block { padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); }
     .info-block:last-child { border-bottom: none; }
     .info-block strong { display: block; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--grey-lt); margin-bottom: .5rem; }
-    .info-block p { font-size: .82rem; color: #555; line-height: 1.7; }
+    .info-block p { font-size: .82rem; color: var(--grey); line-height: 1.7; }
     .info-text { overflow: hidden; max-height: 68px; transition: max-height .5s ease; }
     .info-text.expanded { max-height: 600px; }
     .read-more {
@@ -398,7 +439,7 @@
     .stat-item:last-child { border-right: none; }
     .stat-num {
         font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; letter-spacing: .04em;
-        color: var(--white); line-height: 1;
+        color: var(--gold); line-height: 1;
         display: flex; align-items: baseline; justify-content: center; gap: .1rem;
         margin-bottom: .45rem;
     }
@@ -420,11 +461,11 @@
         line-height: 1; pointer-events: none;
     }
     .quote-band blockquote {
-        font-family: 'Playfair Display', serif; font-style: italic;
-        font-size: 1.4rem; color: #444;
-        margin-bottom: 1.2rem; line-height: 1.75;
+        font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+        font-size: clamp(1.4rem, 3vw, 2rem); color: var(--black);
+        margin-bottom: 1.4rem; line-height: 1.65;
     }
-    .quote-band cite { font-size: .65rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--black); font-style: normal; opacity: .6; }
+    .quote-band cite { font-size: .62rem; font-weight: 700; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); font-style: normal; }
 
     /* ══════════════════════════════════════════════
        NOTRE CONCEPT
@@ -434,14 +475,15 @@
     .section-header { text-align: center; margin-bottom: 3.5rem; }
     .section-header .pre {
         font-size: .58rem; letter-spacing: .35em; text-transform: uppercase;
-        color: var(--red); margin-bottom: 1rem; display: block;
+        color: var(--gold); margin-bottom: 1rem; display: block;
     }
     .section-header h2 {
-        font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: .1em;
+        font-family: 'SignPainter', 'SignPainter HouseScript', 'Bebas Neue', cursive;
+        font-size: 3.2rem; letter-spacing: .02em;
         color: var(--white); line-height: 1;
     }
     .section-header p {
-        margin-top: 1rem; font-size: .85rem; color: rgba(255,255,255,.38);
+        margin-top: 1rem; font-size: .85rem; color: rgba(253,248,242,.38);
         max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.75;
     }
 
@@ -455,7 +497,7 @@
         content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
         background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .4s;
     }
-    .approach-card:hover { background: rgba(255,255,255,.07); border-color: rgba(232,76,61,.25); transform: translateY(-6px); }
+    .approach-card:hover { background: rgba(255,255,255,.06); border-color: rgba(216,150,52,.3); transform: translateY(-6px); }
     .approach-card:hover::before { transform: scaleX(1); }
     .approach-card .card-num {
         font-family: 'Bebas Neue', sans-serif; font-size: 4rem;
@@ -483,10 +525,11 @@
     .related-header { text-align: center; margin-bottom: 2.5rem; }
     .related-header .pre {
         font-size: .58rem; letter-spacing: .35em; text-transform: uppercase;
-        color: var(--red); margin-bottom: .8rem; display: block;
+        color: var(--gold); margin-bottom: .8rem; display: block;
     }
     .related-header h2 {
-        font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: .1em; line-height: 1;
+        font-family: 'SignPainter', 'SignPainter HouseScript', 'Bebas Neue', cursive;
+        font-size: 3.2rem; letter-spacing: .02em; line-height: 1;
     }
 
     .related-grid {
@@ -600,7 +643,8 @@
         color: rgba(255,255,255,.65); margin-bottom: .8rem; display: block;
     }
     .yt-cta-text h2 {
-        font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: .08em;
+        font-family: 'SignPainter', 'SignPainter HouseScript', 'Bebas Neue', cursive;
+        font-size: 2.6rem; letter-spacing: .02em;
         color: var(--white); line-height: 1; margin-bottom: .6rem;
     }
     .yt-cta-text p { font-size: .82rem; color: rgba(255,255,255,.75); max-width: 440px; line-height: 1.65; }
@@ -617,7 +661,7 @@
     /* ══════════════════════════════════════════════
        FOOTER
     ══════════════════════════════════════════════ */
-    footer { background: var(--white); border-top: 1px solid var(--border); }
+    footer { background: var(--dark-2); border-top: 1px solid rgba(255,255,255,.06); }
 
     .footer-top {
         display: grid; grid-template-columns: 1.6fr 1fr;
@@ -628,40 +672,41 @@
     .logo-mark {
         display: flex; align-items: center; gap: .45rem; margin-bottom: 1.2rem;
         font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: .28em;
+        color: var(--white);
     }
     .logo-mark .bar { display: inline-block; width: 20px; height: 9px; background: var(--red); }
 
-    .footer-brand p { font-size: .78rem; color: var(--grey); line-height: 1.75; margin-bottom: 1.2rem; max-width: 360px; }
+    .footer-brand p { font-size: .78rem; color: rgba(253,248,242,.45); line-height: 1.75; margin-bottom: 1.2rem; max-width: 360px; }
     .footer-brand .email-link {
-        font-size: .75rem; color: var(--red); font-weight: 600;
+        font-size: .75rem; color: var(--gold); font-weight: 600;
         display: inline-flex; align-items: center; gap: .35rem;
         text-decoration: underline; text-underline-offset: 3px; transition: color .2s;
     }
-    .footer-brand .email-link:hover { color: var(--red-dk); }
+    .footer-brand .email-link:hover { color: var(--gold-lt); }
 
     .footer-social { display: flex; gap: .6rem; margin-top: 1.5rem; }
     .footer-social a {
-        color: var(--grey); display: flex; align-items: center; justify-content: center;
-        width: 34px; height: 34px; border: 1px solid var(--border); border-radius: 50%; transition: all .2s;
+        color: rgba(253,248,242,.45); display: flex; align-items: center; justify-content: center;
+        width: 34px; height: 34px; border: 1px solid rgba(253,248,242,.12); border-radius: 50%; transition: all .2s;
     }
-    .footer-social a:hover { color: var(--white); border-color: var(--red); background: var(--red); }
+    .footer-social a:hover { color: var(--dark); border-color: var(--gold); background: var(--gold); }
     .footer-social svg { width: 13px; height: 13px; fill: currentColor; display: block; }
 
     .footer-col h4 {
         font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: .28em;
-        margin-bottom: 1.5rem; color: var(--grey);
+        margin-bottom: 1.5rem; color: rgba(253,248,242,.35);
     }
     .footer-menu { display: flex; flex-direction: column; gap: .7rem; }
     .footer-menu a {
-        font-size: .75rem; color: var(--grey); transition: color .2s;
+        font-size: .75rem; color: rgba(253,248,242,.5); transition: color .2s;
         display: flex; align-items: center; gap: .4rem;
     }
-    .footer-menu a::before { content: '→'; font-size: .6rem; color: var(--red); opacity: 0; transition: opacity .2s; }
-    .footer-menu a:hover { color: var(--black); }
+    .footer-menu a::before { content: '→'; font-size: .6rem; color: var(--gold); opacity: 0; transition: opacity .2s; }
+    .footer-menu a:hover { color: var(--white); }
     .footer-menu a:hover::before { opacity: 1; }
 
     .footer-bottom {
-        background: var(--dark); color: rgba(255,255,255,.4); text-align: center;
+        background: var(--dark); color: rgba(253,248,242,.3); text-align: center;
         padding: .9rem; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
     }
 
@@ -766,7 +811,10 @@
         <button class="mobile-menu__close" id="menuClose" aria-label="Fermer le menu">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" fill="none"/></svg>
         </button>
-        <div class="mobile-menu__logo">Les héros <span style="color:var(--red)">de l'ombre</span></div>
+        <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" class="mobile-menu__logo" aria-label="Voir la chaîne YouTube (nouvel onglet)">
+            <img src="logo.svg" alt="" aria-hidden="true">
+            Les héros <span style="color:var(--gold)">de l'ombre</span>
+        </a>
         <nav class="mobile-menu__nav" aria-label="Navigation principale">
             <a href="#hero">Accueil</a>
             <a href="#about">La chaîne</a>
@@ -776,7 +824,7 @@
             <a href="mentions-legales.html">Mentions légales</a>
         </nav>
         <div class="mobile-menu__social">
-            <a href="https://youtube.com/@LHerosDeLOmbre" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube">
+            <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
             </a>
             <a href="https://twitter.com/LHerosDeLOmbre" target="_blank" rel="noopener" aria-label="Nous suivre sur X / Twitter">
@@ -824,11 +872,11 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </button>
-                <a class="nav-logo" href="#hero">
-                    <span class="bar" aria-hidden="true"></span>Les héros de l'ombre
+                <a class="nav-logo" href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" aria-label="Les Héros de l'Ombre — Voir la chaîne YouTube (nouvel onglet)">
+                    <img src="logo.svg" alt="" class="nav-logo-img" aria-hidden="true">Les héros de l'ombre
                 </a>
                 <div class="nav-icons">
-                    <a href="https://youtube.com/@LHerosDeLOmbre" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube (nouvel onglet)">
+                    <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube (nouvel onglet)">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
                     </a>
                     <a href="https://twitter.com/LHerosDeLOmbre" target="_blank" rel="noopener" aria-label="Nous suivre sur X / Twitter (nouvel onglet)">
@@ -880,7 +928,7 @@
                         Partager
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-7.3-4.3a3 3 0 0 0 0-1.8l7.3-4.3a3 3 0 1 0-1-1.7L7.4 9.4a3 3 0 1 0 0 5.2l7.3 4.3A3 3 0 1 0 18 16Z"/></svg>
                     </a>
-                    <a href="https://youtube.com/@LHerosDeLOmbre" target="_blank" rel="noopener">
+                    <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener">
                         Chaîne officielle
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v2h3.6l-9.8 9.8 1.4 1.4L19 6.4V10h2V3z"/></svg>
                     </a>
@@ -919,7 +967,7 @@
                 <div class="trailer-col reveal d2">
                     <div class="trailer-label">Dernière vidéo</div>
                     <a class="trailer-thumb"
-                       href="https://youtube.com/@LHerosDeLOmbre"
+                       href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre"
                        target="_blank"
                        rel="noopener"
                        aria-label="Voir la dernière vidéo sur YouTube (nouvel onglet)">
@@ -1022,7 +1070,7 @@
             <div class="related-grid">
 
                 <a class="related-card reveal d1"
-                   href="https://www.youtube.com/@LHerosDeLOmbre/shorts"
+                   href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre/shorts"
                    target="_blank" rel="noopener"
                    aria-label="Regarder « Dans ta face » sur YouTube Shorts">
                     <div class="related-card-thumb">
@@ -1044,7 +1092,7 @@
                 </a>
 
                 <a class="related-card reveal d2"
-                   href="https://www.youtube.com/@LHerosDeLOmbre/shorts"
+                   href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre/shorts"
                    target="_blank" rel="noopener"
                    aria-label="Regarder « Florentino » sur YouTube Shorts">
                     <div class="related-card-thumb">
@@ -1066,7 +1114,7 @@
                 </a>
 
                 <a class="related-card reveal d3"
-                   href="https://www.youtube.com/@LHerosDeLOmbre/shorts"
+                   href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre/shorts"
                    target="_blank" rel="noopener"
                    aria-label="Regarder « Flute » sur YouTube Shorts">
                     <div class="related-card-thumb">
@@ -1089,7 +1137,7 @@
 
             </div>
             <div class="related-cta reveal">
-                <a href="https://youtube.com/@LHerosDeLOmbre" target="_blank" rel="noopener">
+                <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener">
                     Voir toutes les vidéos
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
                 </a>
@@ -1104,7 +1152,7 @@
                     <h2>Abonnez-vous à la chaîne</h2>
                     <p>Nouveaux épisodes régulièrement. Personnages oubliés, analyses profondes, cinéma vivant.</p>
                 </div>
-                <a class="yt-cta-btn" href="https://youtube.com/@LHerosDeLOmbre" target="_blank" rel="noopener">
+                <a class="yt-cta-btn" href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
                     S'abonner
                 </a>
@@ -1115,16 +1163,16 @@
         <footer id="contact">
             <div class="footer-top">
                 <div class="footer-col footer-brand">
-                    <div class="logo-mark">
-                        <span class="bar" aria-hidden="true"></span>Les héros de l'ombre
-                    </div>
+                    <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" class="footer-logo-link" aria-label="Les Héros de l'Ombre — Voir la chaîne YouTube (nouvel onglet)">
+                        <img src="logo.svg" alt="" class="footer-logo-img" aria-hidden="true">Les héros de l'ombre
+                    </a>
                     <p>Une chaîne YouTube dédiée aux personnages secondaires du cinéma et des séries — ceux sans qui rien ne tient vraiment.</p>
                     <a href="contact.html" class="email-link">
                         <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
                         Nous écrire
                     </a>
                     <div class="footer-social">
-                        <a href="https://youtube.com/@LHerosDeLOmbre" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube (nouvel onglet)">
+                        <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" aria-label="Notre chaîne YouTube (nouvel onglet)">
                             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
                         </a>
                         <a href="https://twitter.com/LHerosDeLOmbre" target="_blank" rel="noopener" aria-label="Nous suivre sur X / Twitter (nouvel onglet)">

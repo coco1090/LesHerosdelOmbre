@@ -24,7 +24,7 @@ Site vitrine pour la chaîne YouTube **Les Héros de l'Ombre**, dédiée aux per
 | Propriété | Valeur |
 |-----------|--------|
 | Nom de la chaîne | Les Héros de l'Ombre |
-| URL YouTube | [youtube.com/@LHerosDeLOmbre](https://youtube.com/@LHerosDeLOmbre) |
+| URL YouTube | [youtube.com/@LesHérosDelOmbre](https://www.youtube.com/@LesH%C3%A9rosDelOmbre) |
 | Email de contact | lesoublies8@gmail.com |
 | Format des vidéos | YouTube Shorts (~4 min) |
 | Langues | Français |

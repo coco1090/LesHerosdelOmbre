@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
     <style>
 
@@ -17,16 +17,17 @@
 
         /* ── VARIABLES ── */
         :root {
-            --red:    #e84c3d;
-            --red-dk: #c0392b;
-            --black:  #1c1c1c;
-            --dark:   #111;
-            --dark-2: #181818;
-            --grey:   #777;
-            --grey-lt:#bbb;
-            --cream:  #f0ede7;
-            --white:  #fff;
-            --border: #e3e0db;
+            --red:    #8B2010;
+            --red-dk: #661508;
+            --gold:   #D89634;
+            --black:  #241B14;
+            --dark:   #1a1208;
+            --dark-2: #211610;
+            --grey:   #8a7a6a;
+            --grey-lt:#b5a898;
+            --cream:  #f5efe6;
+            --white:  #fdf8f2;
+            --border: #3a2e24;
             --section-p: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
         }
 
@@ -75,7 +76,7 @@
         .mobile-menu {
             position: fixed; top: 0; right: 0; bottom: 0;
             width: min(320px, 85vw);
-            background: var(--white); z-index: 400;
+            background: var(--dark); z-index: 400;
             transform: translateX(100%);
             transition: transform .3s cubic-bezier(.4,0,.2,1);
             display: flex; flex-direction: column;
@@ -85,16 +86,17 @@
         .mobile-menu__header {
             display: flex; align-items: center; justify-content: space-between;
             padding: 1.2rem 1.5rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(255,255,255,.08);
         }
         .mobile-menu__logo {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.1rem; letter-spacing: .2em;
+            color: var(--white);
         }
         .menu-close {
             width: 36px; height: 36px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; color: var(--grey);
+            font-size: 1.4rem; color: rgba(253,248,242,.5);
         }
         .mobile-menu nav {
             padding: 2rem 1.5rem;
@@ -103,12 +105,12 @@
         .mobile-menu nav a {
             font-size: .8rem; font-weight: 600;
             letter-spacing: .16em; text-transform: uppercase;
-            color: var(--black); padding: .85rem 0;
-            border-bottom: 1px solid var(--border);
+            color: rgba(253,248,242,.65); padding: .85rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
             transition: color .2s;
         }
         .mobile-menu nav a:hover,
-        .mobile-menu nav a.active { color: var(--red); }
+        .mobile-menu nav a.active { color: var(--gold); }
 
 
         /* ════════════════════════════════════
@@ -123,11 +125,16 @@
         }
 
         .nav__logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.45rem; letter-spacing: .25em;
-            display: flex; align-items: center; gap: .4rem; flex-shrink: 0;
+            font-family: 'SignPainter', 'SignPainter HouseScript', cursive;
+            font-size: 1.35rem; letter-spacing: .03em;
+            display: flex; align-items: center; gap: .5rem; flex-shrink: 0;
         }
-        .nav__logo-bar { width: 18px; height: 8px; background: var(--red); display: inline-block; }
+        .nav__logo-img {
+            width: 34px; height: 34px; flex-shrink: 0;
+            filter: drop-shadow(0 1px 8px rgba(0,0,0,.2));
+            transition: transform .35s cubic-bezier(.22,1,.36,1);
+        }
+        .nav__logo:hover .nav__logo-img { transform: scale(1.1) rotate(-5deg); }
 
         .nav__links { display: flex; gap: 2.2rem; align-items: center; }
         .nav__links a {
@@ -172,19 +179,19 @@
             display: inline-block;
             font-size: .6rem; font-weight: 700;
             letter-spacing: .22em; text-transform: uppercase;
-            color: var(--red); margin-bottom: 1.2rem;
+            color: var(--gold); margin-bottom: 1.2rem;
         }
         .page-header h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 7vw, 5.5rem);
-            letter-spacing: .06em; line-height: 1;
+            font-family: 'SignPainter', 'SignPainter HouseScript', 'Bebas Neue', cursive;
+            font-size: clamp(3.2rem, 7vw, 6rem);
+            letter-spacing: .02em; line-height: 1;
             margin-bottom: 1.2rem;
         }
         .page-header p {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: clamp(.9rem, 2vw, 1.15rem);
-            color: rgba(255,255,255,.6);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic; font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(253,248,242,.6);
             max-width: 500px; margin: 0 auto;
         }
 
@@ -374,9 +381,9 @@
             padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
         }
         .quote-band blockquote {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic; font-weight: 400;
+            font-size: clamp(1.1rem, 2.5vw, 1.45rem);
             color: var(--grey); max-width: 620px; margin: 0 auto .8rem;
         }
         .quote-band cite {
@@ -396,12 +403,18 @@
             padding: var(--section-p);
         }
         .footer-brand__logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.6rem; letter-spacing: .25em;
+            font-family: 'SignPainter', 'SignPainter HouseScript', cursive;
+            font-size: 1.4rem; letter-spacing: .03em;
             color: var(--white); margin-bottom: .8rem;
-            display: flex; align-items: center; gap: .4rem;
+            display: flex; align-items: center; gap: .5rem;
+            text-decoration: none;
         }
-        .footer-brand__logo span { display: inline-block; width: 16px; height: 7px; background: var(--red); }
+        .footer-brand__logo-img {
+            width: 34px; height: 34px; flex-shrink: 0;
+            filter: drop-shadow(0 1px 8px rgba(0,0,0,.4));
+            transition: transform .3s cubic-bezier(.22,1,.36,1);
+        }
+        .footer-brand__logo:hover .footer-brand__logo-img { transform: scale(1.08) rotate(-5deg); }
         .footer-brand p { font-size: .8rem; line-height: 1.75; max-width: 340px; }
 
         .footer-brand__socials { display: flex; gap: .7rem; margin-top: 1.4rem; }
@@ -412,7 +425,7 @@
             color: rgba(255,255,255,.5);
             transition: border-color .2s, color .2s;
         }
-        .footer-brand__socials a:hover { border-color: var(--red); color: var(--white); }
+        .footer-brand__socials a:hover { border-color: var(--gold); color: var(--gold); }
         .footer-brand__socials svg { width: 15px; height: 15px; fill: currentColor; }
 
         .footer-nav h4 {
@@ -482,8 +495,8 @@
     ════════════════════════════════════ -->
     <header class="nav">
 
-        <a class="nav__logo" href="index.html">
-            <span class="nav__logo-bar"></span>
+        <a class="nav__logo" href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" aria-label="Les Héros de l'Ombre — Voir la chaîne YouTube (nouvel onglet)">
+            <img src="logo.svg" alt="" class="nav__logo-img" aria-hidden="true">
             Les Héros de l'Ombre
         </a>
 
@@ -535,7 +548,7 @@
             </div>
             <div class="info-text">
                 <strong>YouTube</strong>
-                <span><a href="https://youtube.com/@LHerosDeLOmbre" target="_blank">@LHerosDeLOmbre</a></span>
+                <span><a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank">@LHerosDeLOmbre</a></span>
             </div>
         </div>
 
@@ -648,13 +661,13 @@
     <footer class="footer">
 
         <div class="footer-brand">
-            <div class="footer-brand__logo">
-                <span></span>
+            <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" rel="noopener" class="footer-brand__logo" aria-label="Les Héros de l'Ombre — Voir la chaîne YouTube (nouvel onglet)">
+                <img src="logo.svg" alt="" class="footer-brand__logo-img" aria-hidden="true">
                 Les Héros de l'Ombre
-            </div>
+            </a>
             <p>La chaîne YouTube qui célèbre les personnages secondaires du cinéma — ceux qu'on retient sans jamais connaître leur nom.</p>
             <div class="footer-brand__socials">
-                <a href="https://youtube.com/@LHerosDeLOmbre" target="_blank" aria-label="YouTube">
+                <a href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre" target="_blank" aria-label="YouTube">
                     <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
                 </a>
                 <a href="https://instagram.com/lesherosdeLombre" target="_blank" aria-label="Instagram">
