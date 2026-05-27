@@ -1,410 +1,567 @@
-# Les Héros de l'Ombre — Site Web
+<div align="center">
 
-Site vitrine pour la chaîne YouTube **Les Héros de l'Ombre**, dédiée aux personnages secondaires du cinéma et des séries. Développé en HTML / CSS / JavaScript vanilla, sans framework, sans dépendance externe.
+```
+██╗     ███████╗███████╗    ██╗  ██╗███████╗██████╗  ██████╗ ███████╗
+██║     ██╔════╝██╔════╝    ██║  ██║██╔════╝██╔══██╗██╔═══██╗██╔════╝
+██║     █████╗  ███████╗    ███████║█████╗  ██████╔╝██║   ██║███████╗
+██║     ██╔══╝  ╚════██║    ██╔══██║██╔══╝  ██╔══██╗██║   ██║╚════██║
+███████╗███████╗███████║    ██║  ██║███████╗██║  ██║╚██████╔╝███████║
+╚══════╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+                                                         DE L'OMBRE
+```
+
+**Site vitrine — Chaîne YouTube dédiée aux personnages secondaires du cinéma**
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/HTML)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v3-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![YouTube](https://img.shields.io/badge/YouTube-@LesHérosDelOmbre-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@LesH%C3%A9rosDelOmbre)
+[![Licence](https://img.shields.io/badge/Licence-Tous_droits_réservés-8B2010?style=flat-square)](./mentions-legales.html)
+
+</div>
 
 ---
 
-## Sommaire
+## ✦ Sommaire
 
-1. [Aperçu du projet](#aperçu-du-projet)
-2. [Structure des fichiers](#structure-des-fichiers)
-3. [Technologies utilisées](#technologies-utilisées)
-4. [Design system](#design-system)
-5. [Pages et contenu](#pages-et-contenu)
-6. [Fonctionnalités JavaScript](#fonctionnalités-javascript)
-7. [Responsive design](#responsive-design)
-8. [Accessibilité](#accessibilité)
-9. [Modifier le contenu](#modifier-le-contenu)
-10. [Déploiement](#déploiement)
+- [Aperçu](#-aperçu)
+- [Structure des fichiers](#-structure-des-fichiers)
+- [Stack technique](#-stack-technique)
+- [Design system](#-design-system)
+- [Pages et contenu](#-pages-et-contenu)
+- [JavaScript & Interactivité](#-javascript--interactivité)
+- [Responsive](#-responsive)
+- [Sécurité](#-sécurité)
+- [Accessibilité](#-accessibilité)
+- [Personnaliser le contenu](#-personnaliser-le-contenu)
+- [Déploiement](#-déploiement)
+- [Checklist avant mise en ligne](#-checklist-avant-mise-en-ligne)
+- [Historique des versions](#-historique-des-versions)
 
 ---
 
-## Aperçu du projet
+## 🎬 Aperçu
+
+> *Ces personnages secondaires sans qui les grandes œuvres ne seraient rien.*
 
 | Propriété | Valeur |
-|-----------|--------|
-| Nom de la chaîne | Les Héros de l'Ombre |
-| URL YouTube | [youtube.com/@LesHérosDelOmbre](https://www.youtube.com/@LesH%C3%A9rosDelOmbre) |
-| Email de contact | lesoublies8@gmail.com |
-| Format des vidéos | YouTube Shorts (~4 min) |
-| Langues | Français |
-| Compatibilité | Chrome, Firefox, Safari, Edge — mobile & desktop |
+|---|---|
+| 🎥 Chaîne | Les Héros de l'Ombre |
+| 🔗 YouTube | [@LesHérosDelOmbre](https://www.youtube.com/@LesH%C3%A9rosDelOmbre) |
+| 📧 Email | lesoublies8@gmail.com |
+| 🎞️ Format vidéo | YouTube Shorts (~4 min) |
+| 🌍 Langue | Français |
+| 🖥️ Compatibilité | Chrome · Firefox · Safari · Edge — mobile & desktop |
+| ⚡ Déploiement | 100 % statique — zéro backend, zéro build |
 
 ---
 
-## Structure des fichiers
+## 📁 Structure des fichiers
 
 ```
 dossier youtube/
 │
-├── index.html          → Page d'accueil principale
-├── contact.html        → Page de contact avec formulaire
-├── mentions-legales.html → Mentions légales
+├── 📄 index.html              →  Page d'accueil (hero, chaîne, stats, vidéos…)
+├── 📄 contact.html            →  Formulaire de contact
+├── 📄 mentions-legales.html   →  Mentions légales (TOC sticky, 8 sections)
 │
-├── app.js              → Tout le JavaScript de la page d'accueil
+├── ⚡ app.js                  →  Tout le JS de la page d'accueil (defer)
+├── 🖼️ logo.svg               →  Logo vectoriel 512×512 (cercle rouge + silhouette)
 │
-└── README.md           → Ce fichier
+└── 📘 README.md               →  Ce fichier
 ```
 
-> **Note :** Il n'y a pas de fichier CSS séparé. Chaque page embarque ses styles dans une balise `<style>` dans le `<head>`. Le JS de `contact.html` et `mentions-legales.html` est inline dans les pages.
+> **Architecture CSS :** Chaque page embarque **Tailwind CSS v3 via CDN** + un bloc `<style>` minimal (~25 lignes) pour les seuls états JS-toggled et pseudo-éléments complexes. Zéro fichier `.css` séparé, zéro npm, zéro build step.
 
 ---
 
-## Technologies utilisées
+## ⚙️ Stack technique
 
-| Technologie | Usage |
-|-------------|-------|
-| HTML5 sémantique | Structure des pages |
-| CSS3 (custom properties, grid, flexbox, clamp) | Mise en page et design |
-| JavaScript ES6+ (vanilla) | Interactivité, animations |
-| Google Fonts | Polices : Bebas Neue, Inter, Playfair Display |
-| IntersectionObserver API | Scroll reveal et animation des compteurs |
-| Web Share API / Clipboard API | Bouton de partage |
-| Git | Versionnement |
+| Technologie | Version | Rôle |
+|---|---|---|
+| **HTML5** | sémantique | Structure et accessibilité |
+| **Tailwind CSS** | v3 (CDN) | Mise en page, design, responsive |
+| **JavaScript** | ES6+ vanilla | Interactivité, animations, parallaxe |
+| **Google Fonts** | — | Bebas Neue · Cormorant Garamond · Inter · Playfair Display |
+| **SignPainter** | macOS system font | Police d'affichage principale (titres, logo) |
+| **IntersectionObserver** | API native | Scroll reveal & animation des compteurs |
+| **Web Share API** | API native | Bouton partager (fallback clipboard) |
+| **Git** | — | Versionnement |
 
-Aucun framework CSS (pas de Bootstrap, Tailwind…), aucun framework JS (pas de Vue, React…), aucune dépendance npm.
+### Pourquoi Tailwind CDN ?
+
+- ✅ **Zéro configuration** — pas de Node.js, pas de PostCSS, pas de build
+- ✅ **JIT à la volée** — le CDN scanne les classes dans le HTML et génère uniquement le CSS nécessaire
+- ✅ **Cohérence** — même config `tailwind.config` partagée sur les 3 pages
+- ✅ **Maintenabilité** — les styles vivent avec les éléments, pas dans un fichier séparé
 
 ---
 
-## Design system
+## 🎨 Design system
 
-### Palette de couleurs
+### Palette moodboard
 
-Définie via des variables CSS dans `:root` sur chaque page.
+Définie dans `tailwind.config` (clés préfixées `c-`) sur chaque page.
 
-| Variable | Valeur | Usage |
-|----------|--------|-------|
-| `--red` | `#e84c3d` | Couleur d'accent principale (boutons, badges, survols) |
-| `--red-dk` | `#c0392b` | Rouge foncé (état hover des boutons) |
-| `--black` | `#1c1c1c` | Texte principal |
-| `--dark` | `#111` | Fond des sections sombres |
-| `--dark-2` | `#181818` | Fond section "Notre Concept" |
-| `--grey` | `#777` | Texte secondaire |
-| `--grey-lt` | `#bbb` | Labels, métadonnées |
-| `--cream` | `#f0ede7` | Fond de la citation, zones légères |
-| `--white` | `#fff` | Fond général |
-| `--border` | `#e3e0db` | Séparateurs et bordures légères |
+| Token Tailwind | Hex | Aperçu | Usage |
+|---|---|---|---|
+| `c-red` | `#8B2010` | 🟥 | Rouge brique — boutons, badges, accents |
+| `c-rdk` | `#661508` | 🔴 | Rouge sombre — hover boutons |
+| `c-gold` | `#D89634` | 🟡 | Or chaud — titres, bordures TOC, arrows |
+| `c-glt` | `#e8a93f` | 💛 | Or clair — hover liens or |
+| `c-blk` | `#241B14` | ⬛ | Brun-noir — texte principal |
+| `c-drk` | `#1a1208` | ⬛ | Très sombre — hero, header pages |
+| `c-dk2` | `#211610` | ⬛ | Sombre 2 — footer, Notre Concept |
+| `c-gry` | `#8a7a6a` | 🔘 | Gris brun — texte secondaire |
+| `c-glt2` | `#b5a898` | 🔘 | Gris clair — labels, métadonnées |
+| `c-crm` | `#f5efe6` | 🟤 | Crème — fond citation, encadrés |
+| `c-wht` | `#fdf8f2` | ⬜ | Blanc ivoire — fond général |
+| `c-bdr` | `#3a2e24` | 🟫 | Brun bordure — séparateurs |
 
 ### Typographie
 
-| Police | Famille | Usage |
-|--------|---------|-------|
-| **Bebas Neue** | Display | Titres, logos, boutons, numéros |
-| **Inter** | Sans-serif | Corps de texte, labels, métadonnées |
-| **Playfair Display** | Serif italique | Citations, sous-titres éditoriaux |
+| Police | Classe Tailwind | Usage |
+|---|---|---|
+| **SignPainter** | `font-sign` | Titres principaux, logos, h1 des pages |
+| **Bebas Neue** | `font-bebas` | Boutons, stats, numéros, nav TOC |
+| **Cormorant Garamond** | `font-cormorant` | Citations, sous-titres éditoriaux, italiques |
+| **Inter** | `font-sans` (default) | Corps de texte, labels, métadonnées |
+| **Playfair Display** | `font-playfair` | Guillemet décoratif géant (citation index) |
 
-### Espacements
+### Tailles fluides
 
-Variable `--section-p` utilisée pour la cohérence du padding entre sections :
+Toutes les tailles de texte et paddings utilisent `clamp()` pour un responsive sans cassure :
 
-```css
---section-p: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)
+```html
+<!-- Exemples de tailles fluides -->
+text-[clamp(3.8rem,7vw,7rem)]    → Hero h1
+text-[clamp(2.8rem,6vw,5rem)]    → Page headers
+text-[clamp(1.4rem,3vw,2rem)]    → Citations
+px-[clamp(1.5rem,5vw,4rem)]      → Padding sections
 ```
 
-Toutes les valeurs de taille utilisent `clamp()` pour un responsive fluide sans media queries superflues.
+### Animations (CSS minimal block)
 
-### Animations
+| Classe | Keyframes | Délai | Usage |
+|---|---|---|---|
+| `.anim-tag` | `fadeIn` | 0.5 s | Badge "Chaîne YouTube" hero |
+| `.anim-h1` | `fadeUp` | 0.7 s | Titre principal hero |
+| `.anim-sub` | `fadeUp` | 0.9 s | Sous-titre hero |
+| `.anim-cta` | `fadeUp` | 1.1 s | Bouton CTA hero |
+| `.anim-hint` | `fadeIn` | 1.6 s | Indicateur de scroll |
+| `.hint-bounce` | `bounceHint` | 2.0 s | Flèche rebondissante |
 
-| Nom | Effet |
-|-----|-------|
-| `fadeUp` | Apparition de bas en haut (hero captions) |
-| `fadeIn` | Fondu simple |
-| `bounce` | Rebond vertical (scroll hint) |
-| `barGrow` | Croissance horizontale de gauche à droite |
-
-Les classes `.reveal`, `.d1`, `.d2`, `.d3`, `.d4` gèrent le scroll reveal avec délais échelonnés (0.12s, 0.24s, 0.36s, 0.48s).
+**Scroll reveal** → classes `.reveal` + `.d1` à `.d4` (délais 0.12 s / 0.24 s / 0.36 s / 0.48 s)
 
 ---
 
-## Pages et contenu
+## 📄 Pages et contenu
 
 ### `index.html` — Page d'accueil
 
-Structure des sections dans l'ordre d'affichage :
+<details>
+<summary><strong>Voir le détail des 8 sections →</strong></summary>
 
-#### 1. Hero
-- Image de fond avec effet **parallaxe** au scroll (via `requestAnimationFrame`)
-- Navigation superposée (logo centré + icônes en haut à droite)
-- Titre animé, sous-titre, CTA "Voir les vidéos"
-- Indicateur de scroll animé
+#### 1. 🎬 Hero
+- Image pleine hauteur avec effet **parallaxe** au scroll
+- Nav overlay (burger + logo centré + icônes réseaux)
+- Titre animé (`fadeUp`), sous-titre, CTA "Voir les vidéos"
+- Indicateur de scroll rebondissant
 
 ```
-Hauteur hero : 540px
-Image : 145% de hauteur pour permettre le parallaxe
-P_INIT  = -189px  (= -(540 × 0.35))
-P_SPEED = 0.35
+Hauteur hero    : 540px  (→ 420px sur mobile ≤680px)
+Image           : 150% de hauteur du hero = 810px
+P_INIT          : -243px  (= -(540 × 0.45))
+P_SPEED         : 0.45
+Actif jusqu'à   : scrollY < 700px
+Optimisation    : requestAnimationFrame + flag anti-doublon
 ```
 
-#### 2. La Chaîne (`#about`)
-- En-tête avec titre, tags (Cinéma / Séries / Analyse), étoiles, boutons d'action
-- Bande de méta-infos : Format, Durée moyenne, Abonnés, Depuis
-- Grille 3 colonnes : affiche poster | description | miniature dernière vidéo
+#### 2. 🎭 La Chaîne (`#about`)
+- En-tête : titre SignPainter, tags genre (Cinéma / Séries / Analyse), étoiles ★
+- Boutons : "Partager" (Web Share API) + "Chaîne officielle" (lien YouTube)
+- Bande méta : Format · Durée moy. · Abonnés · Depuis
+- Grille 3 colonnes : **Affiche poster** | **Description + Read more** | **Miniature dernière vidéo**
 
-#### 3. Statistiques
-- 4 compteurs animés : Abonnés, Épisodes, Vues totales, Durée par épisode
-- Animation déclenchée à l'entrée dans le viewport via `IntersectionObserver`
-- Fonction d'easing cubique pour un défilement naturel
+#### 3. 📊 Statistiques
+- 4 compteurs animés : Abonnés · Épisodes · Vues totales · Durée par épisode
+- Easing cubique : `1 - (1-p)³` sur 1 500 ms
+- Déclenchement par `IntersectionObserver` (se joue une seule fois)
 
-#### 4. Citation
-- Fond `--cream`
-- Guillemet décoratif géant en opacité réduite
-- Texte en Playfair Display italique
+#### 4. 💬 Citation
+- Fond crème `c-crm`
+- Guillemet géant `"` en Playfair Display, opacité 4 %
+- Texte en Cormorant Garamond italique
 
-#### 5. Notre Concept (`#concept`)
-- Fond sombre `--dark-2`
-- 3 cartes : Le personnage ignoré / L'analyse narrative / La passion cinéphile
-- Hover : élévation + barre rouge animée en haut de carte
+#### 5. 🎯 Notre Concept (`#concept`)
+- Fond sombre `c-dk2`
+- 3 cartes : Le personnage ignoré · L'analyse narrative · La passion cinéphile
+- Hover : élévation `-6px` + barre dégradée or→rouge animée en haut (CSS `::before` + `scaleX`)
 
-#### 6. Les Vidéos (`#videos`)
+#### 6. 🎞️ Les Vidéos (`#videos`)
 - 3 cartes YouTube Shorts en **format portrait 9:16**
-- Grille centrée `max-width: 820px`
-- Titre + badge intégrés dans la miniature via dégradé
-- Numéro d'épisode en filigrane
-- Bouton play circulaire rouge au survol
-- Barre rouge animée en bas de carte au survol
+- Numéro épisode en filigrane + bouton play rouge au hover
+- Barre rouge animée bas de carte au hover (`::after` + `scaleX`)
+- Grille centrée `max-w-[820px]`
 
-#### 7. CTA YouTube
+#### 7. 📢 CTA Abonnement
 - Bande rouge pleine largeur
-- Bouton "S'abonner" blanc → lien YouTube
+- Bouton blanc → YouTube
 
-#### 8. Footer
-- 2 colonnes : Branding (logo + description + réseaux sociaux) | Navigation
-- Barre de bas de page sombre avec copyright
+#### 8. 🔻 Footer
+- 2 colonnes : Branding (logo + description + réseaux + email) | Navigation (flèches or au hover)
+- Barre copyright sombre
+
+</details>
 
 ---
 
 ### `contact.html` — Page de contact
 
-#### Sections
+<details>
+<summary><strong>Voir le détail →</strong></summary>
 
 | Section | Contenu |
-|---------|---------|
-| Nav sticky | Logo + liens + burger mobile |
-| Page header | Titre "Nous Contacter" sur fond sombre |
-| Infos rapides | 3 blocs : Email / YouTube / Délai de réponse |
-| Formulaire | Prénom, Nom, Email, Téléphone (optionnel), Sujet, Message, RGPD |
-| Citation | Même style qu'index.html |
+|---|---|
+| Nav sticky | Logo SignPainter + liens + burger mobile |
+| Page header | Fond `c-drk`, titre "Nous Contacter" en SignPainter |
+| Infos rapides | 3 blocs séparés : Email · YouTube · Délai de réponse |
+| Formulaire | Prénom · Nom · Email · Téléphone (opt.) · Sujet · Message · RGPD |
+| Citation | Style identique à index.html (simplifié) |
 | Footer | Identique à index.html |
 
-#### Fonctionnement du formulaire
+**Fonctionnement du formulaire :**
 
-Le formulaire utilise `mailto:` — à la soumission, le client mail de l'utilisateur s'ouvre avec les champs pré-remplis (destinataire, sujet, corps du message formaté). Aucun serveur ni API requis.
+Utilise `mailto:` — le client mail s'ouvre avec les champs pré-remplis (destinataire, sujet formaté, corps). Aucun serveur, aucune API.
 
-Validations côté client :
-- Prénom + Nom obligatoires
-- Email valide (présence du `@`)
+**Validations côté client :**
+- Prénom + Nom requis
+- Email valide (`@` détecté)
 - Sujet obligatoire (select)
-- Message minimum 10 caractères
-- Checkbox RGPD obligatoire
+- Message ≥ 10 caractères
+- Checkbox RGPD requise
 
-En cas de succès : le formulaire est masqué et un message de confirmation apparaît.
+En cas de succès → formulaire masqué + message de confirmation animé.
+
+</details>
 
 ---
 
 ### `mentions-legales.html` — Mentions légales
 
-Page simple avec navigation de retour. Contient les mentions légales standard (éditeur, hébergeur, propriété intellectuelle, données personnelles).
+<details>
+<summary><strong>Voir le détail →</strong></summary>
+
+- En-tête sombre avec flèche retour + titre SignPainter
+- Mini bandeau rouge (date de mise à jour)
+- **Grille 2 colonnes** : TOC sticky (sommaire 01→08) | Corps légal
+- 8 sections : Éditeur · Hébergement · Propriété intellectuelle · Données personnelles · Cookies · Responsabilité · Droit applicable · Contact
+- Citation bas de page
+- Footer identique
+
+**TOC :** Numéros hardcodés `01`–`08` en Bebas Neue or, liens avec scroll fluide.
+
+</details>
 
 ---
 
-## Fonctionnalités JavaScript
+## ⚡ JavaScript & Interactivité
 
-Tout le JS de la page d'accueil est dans `app.js` (chargé avec `defer`). Le JS des autres pages est inline.
+Tout le JS de la page d'accueil est dans `app.js` (chargé avec `defer`).  
+Le JS de `contact.html` et `mentions-legales.html` est inline dans les pages.
 
-### `app.js` — Structure
+### Architecture `app.js`
 
 ```
 app.js
-├── showToast()           → Notification temporaire en bas de page
-├── Menu burger           → Ouverture/fermeture du menu mobile (slide-in)
-├── Recherche             → Overlay de recherche YouTube
-├── Partager              → Web Share API + fallback clipboard
-├── Lire plus / moins     → Expansion du texte de description
-├── Scroll                → Parallaxe hero + affichage bouton retour en haut
-├── Scroll reveal         → IntersectionObserver + filet de sécurité (2.5s)
-└── Compteurs             → Animation des chiffres avec easing cubique
+├── showToast(msg)        → Toast notification temporaire (bas de page)
+│
+├── ── MENU BURGER ──
+│   ├── openMenu()        → body.classList.add('menu-open') + focus
+│   ├── closeMenu()       → body.classList.remove('menu-open')
+│   └── Écouteurs         → burgerBtn · menuClose · overlay · liens · Escape
+│
+├── ── RECHERCHE ──
+│   ├── openSearch()      → searchOverlay.classList.add('active')
+│   ├── closeSearch()     → searchOverlay.classList.remove('active')
+│   └── form submit       → youtube.com/results?search_query=…+Les héros de l ombre
+│
+├── ── PARTAGER ──
+│   └── shareBtn click    → Web Share API (mobile) ou Clipboard API (desktop)
+│
+├── ── LIRE PLUS/MOINS ──
+│   └── readMoreBtn       → toggle .expanded sur #infoText (max-height animation)
+│
+├── ── SCROLL ──
+│   ├── Parallaxe         → heroImg.style.transform = translateY(P_INIT + scrollY × P_SPEED)
+│   └── Retour en haut    → toggle .visible sur #backToTop (seuil : 260px)
+│
+├── ── SCROLL REVEAL ──
+│   ├── IntersectionObserver (threshold: 0.1) → .reveal → .reveal.visible
+│   └── Filet de sécurité → setTimeout 2 500 ms (en cas de scroll rapide)
+│
+└── ── COMPTEURS ──
+    ├── animateCount(el)  → easing cubique sur 1 500 ms
+    └── IntersectionObserver → déclenche une seule fois sur .stat-item
 ```
 
-### Détail des fonctionnalités
+### Parallaxe — Maths
 
-#### Menu burger (mobile)
-- Ouvre un panneau latéral gauche avec overlay semi-transparent
-- Fermeture : clic sur ✕, clic sur l'overlay, touche `Escape`, clic sur un lien
-- Gestion `aria-expanded` pour l'accessibilité
-
-#### Overlay de recherche
-- S'ouvre sur le bouton loupe dans la nav
-- La soumission redirige vers `youtube.com/results?search_query=...+Les héros de l ombre`
-- Fermeture : bouton, touche `Escape`
-
-#### Parallaxe hero
-```javascript
-const P_INIT  = -189;   // offset initial en px (= -(540 × 0.35))
-const P_SPEED = 0.35;   // vitesse du déplacement (0 = aucun, 1 = scroll normal)
-// Actif uniquement si scrollY < 700px (hero hors vue = inutile)
 ```
-Optimisé avec `requestAnimationFrame` et flag anti-doublon.
+Hero height   : 540 px
+Image height  : 150% = 810 px
+P_INIT        : -(540 × 0.45) = -243 px
 
-#### Animation des compteurs
-- Durée : 1 500 ms
-- Easing : `1 - (1-p)³` (cubic ease-out)
-- Déclenchement : entrée dans le viewport d'un `.stat-item`
-- Ne se rejoue pas (`countersDone = true`)
-
-#### Scroll reveal
-- `IntersectionObserver` avec `threshold: 0.1`
-- Filet de sécurité : toutes les `.reveal` passent en `visible` après 2,5 s (en cas de navigateur non supporté ou de scroll rapide)
+scrollY = 0   → translateY(-243px)  ✓ image couvre le hero avec marge
+scrollY = 540 → translateY(+0px)    ✓ image au bord bas du hero
+Vitesse 0.45  = +29% d'effet vs ancienne valeur (0.35)
+```
 
 ---
 
-## Responsive design
+## 📱 Responsive
 
-### Breakpoints
+### Breakpoints Tailwind (max-width)
 
 | Breakpoint | Largeur | Changements principaux |
-|------------|---------|------------------------|
-| Desktop | > 1024px | Mise en page complète 3 colonnes |
-| Tablette large | ≤ 1024px | Colonne trailer masquée, profile 2 colonnes |
-| Tablette | ≤ 860px | Menu burger actif, grilles → 2 colonnes, stats → 2×2 |
-| Mobile | ≤ 680px | Hero réduit (420px), profile 1 colonne, poster masqué |
-| Petit mobile | ≤ 400px | Typographie réduite, grilles → 2 colonnes centrées |
+|---|---|---|
+| Desktop | > 1024px | Layout 3 colonnes (poster + info + trailer) |
+| Tablette+ | ≤ 1024px | Colonne trailer masquée, profile 2 colonnes |
+| Tablette | ≤ 860px | Burger actif, grilles → 2 col, stats → 2×2, footer 1 col |
+| Mobile | ≤ 680px | Hero → 420px, profile 1 col, poster masqué, nav simplifiée |
+| Petit mobile | ≤ 580px | Formulaire 1 col, legal-card 1 col |
+| Très petit | ≤ 400px | Vidéos 2 col réduit, typo réduite |
 
 ### Stratégie
 
-- Pas de breakpoints fixes rigides : les tailles utilisent `clamp()` pour une fluidité maximale
-- La variable `--section-p` assure un padding cohérent et adaptatif sur toutes les sections
-- Les sections à fond coloré s'étendent sur **toute la largeur** de l'écran (pas de max-width sur le wrapper principal)
-- Les sections à fond blanc ont un `max-width: 1360px; margin: 0 auto` pour rester lisibles sur grands écrans
+- **Mobile first** via Tailwind (`max-[X]:`  pour dé-grader), `clamp()` pour la fluidité entre les breakpoints
+- Sections pleine largeur (fonds colorés) → pas de `max-width` sur le wrapper
+- Sections à fond blanc → `max-w-[1360px] mx-auto`
+- Police fluide : `text-[clamp(3.8rem,7vw,7rem)]` → aucune rupture visuelle
 
 ---
 
-## Accessibilité
+## 🔒 Sécurité
 
-- **Skip link** : "Aller au contenu principal" en tête de page (visible au focus)
-- **ARIA** : `aria-label`, `aria-expanded`, `aria-controls`, `aria-modal`, `aria-live` sur les éléments interactifs
-- **Focus visible** : outline `2px solid var(--red)` sur tous les éléments focusables
-- **`prefers-reduced-motion`** : désactive toutes les transitions et animations (scroll reveal, parallaxe)
-- **Formulaire contact** : labels explicites, `autocomplete`, attributs `required` sémantiques
-- **Images** : attributs `alt` descriptifs sur toutes les images
-- **Liens externes** : `target="_blank" rel="noopener"` + `aria-label` avec "(nouvel onglet)"
+Chaque page implémente 3 en-têtes de sécurité via `<meta http-equiv>` :
+
+### Content Security Policy (CSP)
+
+```
+default-src 'none'
+style-src   'unsafe-inline' fonts.googleapis.com cdn.tailwindcss.com
+font-src    fonts.gstatic.com
+img-src     'self' images.unsplash.com data: blob:
+script-src  'self' 'unsafe-inline' cdn.tailwindcss.com
+connect-src 'self' cdn.tailwindcss.com
+frame-src   'none'
+object-src  'none'
+base-uri    'self'
+form-action 'self' mailto:
+```
+
+> `'unsafe-inline'` est nécessaire pour Tailwind CDN (génération CSS à la volée).  
+> Sur un vrai déploiement avec build Tailwind, remplacer par des hashes ou nonces.
+
+### Autres en-têtes
+
+| En-tête | Valeur | Protection |
+|---|---|---|
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Fuite d'URL |
+| `Permissions-Policy` | `camera=() microphone=() geolocation=()` | APIs sensibles |
+
+### Liens externes
+
+Tous les `target="_blank"` incluent `rel="noopener noreferrer"` (clickjacking + fuite de référent).
 
 ---
 
-## Modifier le contenu
+## ♿ Accessibilité
 
-### Changer les vrais liens YouTube
+| Fonctionnalité | Implémentation |
+|---|---|
+| **Skip link** | "Aller au contenu principal" → focus → fixé en haut |
+| **ARIA labels** | `aria-label` sur tous les boutons, liens icônes, modales |
+| **aria-expanded** | Burger button mis à jour à l'ouverture/fermeture |
+| **aria-modal** | Sur les dialogues (menu mobile, overlay recherche) |
+| **aria-live** | Sur le toast (`role="status"`) |
+| **Focus visible** | `outline: 2px solid #8B2010` sur `:focus-visible` |
+| **Reduced motion** | `@media (prefers-reduced-motion)` → désactive tout |
+| **Formulaire** | Labels liés, `autocomplete`, champs typés |
+| **Images** | `alt` descriptif · `aria-hidden="true"` sur les déco |
+| **Liens externes** | `aria-label` avec "(nouvel onglet)" |
+| **Sémantique HTML** | `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, `<aside>` |
 
-Dans `index.html` et `contact.html`, remplacer toutes les occurrences de :
+---
+
+## ✏️ Personnaliser le contenu
+
+### 🔗 Changer l'URL YouTube
+
+Rechercher/remplacer dans les 3 fichiers HTML :
 ```
-https://youtube.com/@LHerosDeLOmbre
+https://www.youtube.com/@LesH%C3%A9rosDelOmbre
 ```
-par l'URL réelle de votre chaîne.
 
-### Modifier les statistiques
+### 📊 Modifier les statistiques
 
-Dans `index.html`, section `<!-- ── STATS ── -->` :
+Dans `index.html`, section stats — changer `data-target` :
 
 ```html
-<span class="stat-num" data-target="1000">0</span>   <!-- Abonnés -->
-<span class="stat-num" data-target="4" data-suffix="+">0</span>  <!-- Épisodes -->
-<span class="stat-num" data-target="30000">0</span>  <!-- Vues -->
+<span data-target="1000">0</span>          <!-- Abonnés -->
+<span data-target="4" data-suffix="+">0</span>  <!-- Épisodes -->
+<span data-target="30000">0</span>         <!-- Vues totales -->
+<span data-target="4" data-suffix="">0</span>   <!-- Minutes/épisode -->
 ```
-Changer la valeur de `data-target`. Le suffixe optionnel se définit avec `data-suffix`.
 
-### Ajouter / modifier une vidéo
+### 🎞️ Ajouter une carte vidéo
 
-Dans `index.html`, chaque carte vidéo suit ce modèle :
+Dans `index.html`, section `#videos`, dupliquer ce bloc :
 
 ```html
-<a class="related-card reveal d1"
-   href="LIEN_VERS_LE_SHORT"
-   target="_blank" rel="noopener"
+<a class="related-card reveal d1 block relative transition-transform duration-[400ms] hover:-translate-y-[6px]"
+   href="https://www.youtube.com/@LesHérosDelOmbre/shorts"
+   target="_blank" rel="noopener noreferrer"
    aria-label="Regarder « TITRE » sur YouTube Shorts">
-    <div class="related-card-thumb">
-        <img src="URL_MINIATURE" alt="TITRE — Short">
-        <div class="card-overlay">
-            <span class="card-ep">01</span>          <!-- Numéro d'épisode -->
-            <div class="card-info">
-                <h3>TITRE</h3>
-                <span class="shorts-badge">Short · 2026</span>
+    <div class="related-card-thumb [aspect-ratio:9/16] bg-[#1a1a1a] overflow-hidden">
+        <img src="URL_MINIATURE" alt="TITRE — Short"
+             class="w-full h-full object-cover transition duration-[550ms]">
+        <div class="absolute inset-0 z-[2] bg-gradient-to-t from-black/[.92] ...">
+            <span class="font-bebas text-[1.6rem] text-white/[.1] ... self-end">04</span>
+            <div>
+                <h3 class="font-bebas text-[1.05rem] ...">TITRE</h3>
+                <span class="shorts-badge ...">Short · 2026</span>
             </div>
         </div>
-        <div class="play-overlay" aria-hidden="true">
-            <div class="play-circle-sm">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="play-overlay absolute inset-0 z-[3] flex items-center justify-center pointer-events-none">
+            <div class="play-circle-sm w-[50px] h-[50px] rounded-full bg-c-red ...">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-white ml-[3px]"><path d="M8 5v14l11-7z"/></svg>
             </div>
         </div>
     </div>
 </a>
 ```
 
-### Modifier la recherche YouTube
+Changer les classes `.d1` → `.d2` → `.d3` → `.d4` pour les délais d'animation.
 
-Dans `app.js` ligne ~67, la chaîne ajoutée à chaque recherche :
+### 🎨 Changer les couleurs
 
-```javascript
-`https://www.youtube.com/results?search_query=${encodeURIComponent(q + ' Les héros de l ombre')}`
-```
+Dans le bloc `tailwind.config` de chaque fichier HTML :
 
-### Changer l'email de contact
-
-Deux endroits à mettre à jour :
-1. `contact.html` — balise `<a href="mailto:...">` dans les infos rapides
-2. `contact.html` — variable `mailtoURL` dans le script JS
-
-### Modifier les couleurs
-
-Dans `:root` de chaque fichier HTML :
-```css
-:root {
-    --red:    #e84c3d;   /* Couleur principale */
-    --red-dk: #c0392b;   /* Hover */
-    --dark:   #111;      /* Sections sombres */
-    /* ... */
+```js
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'c-red':  '#8B2010',   // ← Rouge principal
+        'c-gold': '#D89634',   // ← Or accent
+        'c-drk':  '#1a1208',   // ← Fond hero/headers
+        // ...
+      }
+    }
+  }
 }
 ```
 
----
+### 🔍 Modifier la recherche YouTube
 
-## Déploiement
+Dans `app.js`, ligne ~67 :
 
-Le site est 100% statique : aucun backend, aucun build requis.
+```javascript
+window.open(
+    `https://www.youtube.com/results?search_query=${encodeURIComponent(q + ' Les héros de l ombre')}`,
+    '_blank'
+);
+```
 
-### Options d'hébergement gratuit
+Changer la chaîne `' Les héros de l ombre'` par le nom de votre chaîne.
 
-| Hébergeur | Commande / Méthode |
-|-----------|-------------------|
-| **GitHub Pages** | Push sur branche `main`, activer Pages dans les settings |
-| **Netlify** | Glisser-déposer le dossier sur netlify.com/drop |
-| **Vercel** | `vercel deploy` depuis le dossier |
-| **Cloudflare Pages** | Connecter le repo GitHub, aucune config de build |
+### 📧 Changer l'email de contact
 
-### Checklist avant mise en ligne
-
-- [ ] Remplacer les images Unsplash par les vraies miniatures des vidéos
-- [ ] Mettre à jour les liens YouTube avec la vraie URL de la chaîne
-- [ ] Mettre à jour les vrais chiffres dans les statistiques
-- [ ] Vérifier l'adresse email dans `contact.html`
-- [ ] Compléter les `mentions-legales.html` avec les vraies informations
-- [ ] Ajouter un `favicon.ico` à la racine du projet
-- [ ] Tester sur mobile (iOS Safari + Chrome Android)
-- [ ] Vérifier que les liens réseaux sociaux (Instagram, Twitter/X) pointent vers les bons comptes
+Remplacer toutes les occurrences de `lesoublies8@gmail.com` dans `contact.html` et `mentions-legales.html`.
 
 ---
 
-## Historique des versions
+## 🚀 Déploiement
 
-| Version | Description |
-|---------|-------------|
-| v1.0 | Structure initiale, macOS window mock |
-| v1.1 | Ajout icône Instagram dans la navigation |
-| v2.0 | Refonte complète : pleine page, suppression du contour macOS |
-| v2.1 | Externalisation du JS dans `app.js`, correction section "Notre Concept" |
-| v2.2 | Suppression newsletter, refonte design professionnelle |
-| v2.3 | Adaptation page contact au nouveau design |
-| v2.4 | Section vidéos : format Shorts 9/16, titre intégré dans la miniature |
-| v2.5 | Suppression des bordures épaisses, full-width sans bords blancs |
+Le site est **100 % statique** : aucun backend, aucun build, aucune commande à lancer.
+
+### Hébergement recommandé
+
+| Hébergeur | Méthode | Domaine personnalisé |
+|---|---|---|
+| **GitHub Pages** | Push sur `main` → Settings → Pages | ✅ Gratuit |
+| **Netlify** | Glisser-déposer le dossier sur netlify.com/drop | ✅ Gratuit |
+| **Vercel** | `vercel deploy` depuis le dossier | ✅ Gratuit |
+| **Cloudflare Pages** | Connecter le repo GitHub | ✅ Gratuit |
+
+### Optimisation production (optionnel)
+
+Pour passer de Tailwind CDN à un build optimisé :
+
+```bash
+# 1. Installer Tailwind CLI
+npm install -D tailwindcss
+
+# 2. Générer uniquement les classes utilisées
+npx tailwindcss -i ./input.css -o ./output.css --minify
+
+# 3. Remplacer le CDN par le fichier généré
+# <link rel="stylesheet" href="output.css">
+```
+
+> Bénéfice : CSS final ~10 Ko au lieu du CDN complet (~3 Mo). Aussi, supprimer `'unsafe-inline'` de la CSP et le remplacer par un hash.
 
 ---
 
-*Site développé avec [Claude Code](https://claude.ai/code) — © 2026 Les Héros de l'Ombre*
+## ✅ Checklist avant mise en ligne
+
+**Contenu**
+- [ ] Remplacer les images Unsplash par les vraies miniatures YouTube
+- [ ] Mettre à jour l'URL YouTube dans les 3 fichiers HTML
+- [ ] Mettre à jour les chiffres des statistiques (abonnés, vues, épisodes)
+- [ ] Vérifier l'adresse email dans `contact.html` et `mentions-legales.html`
+- [ ] Compléter `mentions-legales.html` avec les vraies infos hébergeur
+
+**Technique**
+- [ ] Ajouter un `favicon.ico` / `favicon.svg` à la racine
+- [ ] Vérifier les liens réseaux sociaux (Instagram, Twitter/X)
+- [ ] Tester le formulaire de contact (ouverture du client mail)
+- [ ] Tester le scroll parallaxe sur desktop et mobile
+- [ ] Vérifier le menu mobile (burger → slide → fermeture Escape)
+
+**Qualité**
+- [ ] Tester sur iOS Safari + Chrome Android
+- [ ] Tester avec la préférence "Réduire les animations" activée
+- [ ] Vérifier la navigation clavier (Tab + Entrée + Escape)
+- [ ] Passer les 3 pages dans [PageSpeed Insights](https://pagespeed.web.dev/)
+
+---
+
+## 📋 Historique des versions
+
+| Version | Date | Description |
+|---|---|---|
+| `v1.0` | — | Structure initiale, mock macOS window |
+| `v1.1` | — | Ajout icône Instagram dans la navigation |
+| `v2.0` | — | Refonte complète : pleine page, suppression contour macOS |
+| `v2.1` | — | Externalisation JS → `app.js`, correction section "Notre Concept" |
+| `v2.2` | — | Suppression newsletter, refonte design professionnelle |
+| `v2.3` | — | Page contact adaptée au nouveau design |
+| `v2.4` | — | Vidéos : format Shorts 9:16, titre intégré dans la miniature |
+| `v2.5` | — | Suppression bordures épaisses, full-width |
+| `v2.6` | — | Intégration logo SVG, palette moodboard, police SignPainter |
+| `v2.7` | — | Sécurité CSP · parallaxe renforcé (P_SPEED 0.45) · boutons retour uniformisés |
+| **`v3.0`** | **Mai 2026** | **Migration complète vers Tailwind CSS v3 CDN — zéro fichier CSS séparé** |
+
+---
+
+<div align="center">
+
+**✦ Les Héros de l'Ombre ✦**
+
+*Ces personnages secondaires sans qui les grandes œuvres ne seraient rien.*
+
+[![YouTube](https://img.shields.io/badge/S'abonner-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@LesH%C3%A9rosDelOmbre)
+
+</div>

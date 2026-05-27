@@ -118,17 +118,18 @@ readMoreBtn.addEventListener('click', () => {
    SCROLL — parallaxe + retour en haut
 
    Calcul parallaxe :
-     Hero : 480 px  ·  Image : 145 % = 696 px
-     P_INIT  = -(480 × 0.38) = -182 px
-     scrollY = 0   → translateY(-182) : bord haut hors cadre ✓
-     scrollY = 480 → translateY(0)    : image au bord du hero ✓
+     Hero : 540 px  ·  Image : 150 % = 810 px
+     P_INIT  = -(540 × 0.45) = -243 px
+     scrollY = 0   → translateY(-243) : bord haut hors cadre ✓
+     scrollY = 540 → translateY(0)    : image au bord du hero ✓
+     Vitesse augmentée (0.45) pour un effet bien visible
 ═══════════════════════════════════════════════════ */
 
 const heroImg = document.querySelector('.hero-img');
 const backBtn = document.getElementById('backToTop');
 
-const P_INIT  = -189;
-const P_SPEED = 0.35;
+const P_INIT  = -243;
+const P_SPEED = 0.45;
 let   raf     = false;
 
 window.addEventListener('scroll', () => {
