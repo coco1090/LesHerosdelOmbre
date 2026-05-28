@@ -6,7 +6,7 @@
     <title>Contact — Les Héros de l'Ombre</title>
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link rel="apple-touch-icon" href="logo.svg">
-    <meta name="description" content="Contactez Les Héros de l'Ombre — suggestions, partenariats, presse.">
+    <meta name="description" content="Contactez Les Héros de l'Ombre — commandes, informations produit, suggestions, partenariats.">
 
     <!-- ── SÉCURITÉ ── -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; script-src 'unsafe-inline' https://cdn.tailwindcss.com; connect-src 'self' https://cdn.tailwindcss.com; frame-src https://maps.google.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
@@ -45,6 +45,10 @@
     /* États JS-toggled + pseudo-éléments non gérables par Tailwind */
     :focus{outline:none}
     :focus-visible{outline:2px solid #8B2010;outline-offset:3px;border-radius:2px}
+    /* ── Curseur rouge ── */
+    *,*::before,*::after{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='18' viewBox='0 0 13 18'%3E%3Cpath d='M0 0L0 14L4 10L7 18L10 16.5L7 9L12 9Z' fill='%238B2010' stroke='%23fdf8f2' stroke-width='1.1' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0,default}
+    a,button,[role='button'],label[for],select,input[type='checkbox'],input[type='radio'],input[type='submit'],input[type='button'],.cursor-pointer{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='16' viewBox='0 0 11 16'%3E%3Cpath d='M4 0C2.9 0 2 .9 2 2V8.5C1.7 8.2 1.4 8 1 8 0.4 8 0 8.4 0 9V12A4 4 0 004 16H6A5 5 0 0011 11V8A1.5 1.5 0 008 8V7A1.5 1.5 0 005 7V2C5 .9 4.6 0 4 0Z' fill='%238B2010' stroke='%23fdf8f2' stroke-width='0.5'/%3E%3C/svg%3E") 4 0,pointer}
+    input[type='text'],input[type='email'],input[type='tel'],input[type='password'],input[type='search'],textarea{cursor:text}
     /* Toast */
     .toast{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(16px);transition:opacity .3s,transform .3s}
     .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -224,16 +228,17 @@
                     <select id="cf-sujet" name="sujet"
                             class="w-full border border-c-bdr px-4 pr-10 py-[.8rem] text-[.85rem] text-c-blk bg-c-wht outline-none appearance-none rounded-none cursor-pointer transition">
                         <option value="" disabled selected>— Choisir un sujet</option>
+                        <option value="commande">Commande</option>
+                        <option value="infos-produit">Informations produit</option>
                         <option value="suggestion">Suggestion de personnage</option>
                         <option value="partenariat">Partenariat &amp; Collaboration</option>
-                        <option value="presse">Presse &amp; Médias</option>
-                        <option value="sponsoring">Sponsoring</option>
                         <option value="question">Question générale</option>
                         <option value="autre">Autre</option>
                     </select>
                 </div>
             </div>
 
+            
             <div class="field-wrap col-span-2 max-[580px]:col-span-1">
                 <label for="cf-message" class="block text-[.58rem] font-bold tracking-[.18em] uppercase text-c-gry mb-[.55rem]">Message <span class="text-c-red">*</span></label>
                 <textarea id="cf-message" name="message" placeholder="Dis-nous tout…" rows="6"

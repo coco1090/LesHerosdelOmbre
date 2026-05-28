@@ -48,6 +48,11 @@
     :focus{outline:none}
     :focus-visible{outline:2px solid #8B2010;outline-offset:3px;border-radius:2px}
 
+    /* ── Curseur rouge ── */
+    *,*::before,*::after{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='18' viewBox='0 0 13 18'%3E%3Cpath d='M0 0L0 14L4 10L7 18L10 16.5L7 9L12 9Z' fill='%238B2010' stroke='%23fdf8f2' stroke-width='1.1' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0,default}
+    a,button,[role='button'],label[for],select,input[type='checkbox'],input[type='radio'],input[type='submit'],input[type='button'],.cursor-pointer,.size-btn,.add-btn,.faq-btn,.cart-qty-btn,.cart-remove,.cart-checkout-btn,[data-action='add-to-cart']{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='16' viewBox='0 0 11 16'%3E%3Cpath d='M4 0C2.9 0 2 .9 2 2V8.5C1.7 8.2 1.4 8 1 8 0.4 8 0 8.4 0 9V12A4 4 0 004 16H6A5 5 0 0011 11V8A1.5 1.5 0 008 8V7A1.5 1.5 0 005 7V2C5 .9 4.6 0 4 0Z' fill='%238B2010' stroke='%23fdf8f2' stroke-width='0.5'/%3E%3C/svg%3E") 4 0,pointer}
+    input[type='text'],input[type='email'],input[type='tel'],input[type='password'],input[type='search'],textarea{cursor:text}
+
     /* Skip link */
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{position:fixed;left:50%;top:0;transform:translateX(-50%);background:#8B2010;color:#fff;z-index:9999;padding:.55rem 1.8rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;width:auto;height:auto;overflow:visible}
@@ -412,7 +417,7 @@
             </div>
 
             <!-- Grille clapperboard 3×3 -->
-            <div class="grid grid-cols-3 gap-[.55rem] max-[620px]:grid-cols-2 max-[380px]:grid-cols-1">
+            <div class="grid grid-cols-3 gap-[.55rem] max-[780px]:grid-cols-2 max-[420px]:grid-cols-1">
 
                 <!-- 01 — FOFANA -->
                 <div class="crew-scene-wrap h-[145px]">
@@ -609,7 +614,7 @@
         <div class="grid [grid-template-columns:210px_1fr_1.1fr] gap-10 max-[1024px]:[grid-template-columns:190px_1fr] max-[680px]:grid-cols-1">
 
             <div class="reveal [aspect-ratio:2/3] bg-[#111] overflow-hidden shadow-[12px_18px_50px_rgba(0,0,0,.25)] relative group max-[680px]:hidden">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=85"
+                <img src="miniature.JPG"
                      alt="Affiche Les Héros de l'Ombre"
                      class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 border border-white/[.06] pointer-events-none"></div>
@@ -622,7 +627,7 @@
                 </div>
                 <div class="pb-5 border-b border-c-bdr">
                     <strong class="block text-[.78rem] tracking-[.2em] uppercase text-c-glt2 mb-[.6rem]">Format</strong>
-                    <p class="text-[1.05rem] text-c-gry leading-[1.7]">YouTube Shorts · 4 minutes pour captiver</p>
+                    <p class="text-[1.05rem] text-c-gry leading-[1.7]">Vidéos courtes</p>
                 </div>
                 <div>
                     <strong class="block text-[.78rem] tracking-[.2em] uppercase text-c-glt2 mb-[.6rem]">Sujet</strong>
@@ -710,7 +715,7 @@
             <h2 class="font-sign text-[3.2rem] tracking-[.02em] leading-none">NOUS DÉCOUVRIR</h2>
         </div>
 
-        <div class="grid grid-cols-3 gap-[1.2rem] max-w-[820px] mx-auto max-[680px]:grid-cols-2 max-[680px]:gap-[.7rem] max-[400px]:gap-[.5rem]">
+        <div class="grid grid-cols-3 gap-[1.2rem] max-w-[820px] mx-auto max-[680px]:grid-cols-2 max-[680px]:gap-[.7rem] max-[400px]:grid-cols-1 max-[400px]:gap-[.5rem]">
 
             <a class="related-card reveal d1 block relative transition-transform duration-[400ms] hover:-translate-y-[6px]"
                href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre/shorts" target="_blank" rel="noopener noreferrer"
@@ -807,29 +812,22 @@
                 </button>
             </div>
 
-            <!-- Grille 4 T-shirts -->
-            <div class="grid grid-cols-4 gap-[.7rem] max-[1024px]:grid-cols-2 max-[460px]:grid-cols-1 mb-10">
+            <!-- Grille produits -->
+            <div class="grid grid-cols-3 gap-[.7rem] max-[1024px]:grid-cols-2 max-[580px]:grid-cols-1 mb-10">
 
-                <!-- 01 — RÔLE DISCRET (dark) -->
-                <div class="tshirt-card reveal d1 border border-c-bdr/[.5] overflow-hidden" data-product="RÔLE DISCRET" data-price="29.90">
-                    <div class="relative bg-[#0d0b09]" style="aspect-ratio:3/3.6">
-                        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=50"
-                             alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-[.18] select-none pointer-events-none">
-                        <svg class="absolute inset-0 w-full h-full opacity-[.05] text-white" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M65,8 L5,48 L35,58 L35,188 L165,188 L165,58 L195,48 L135,8 Q118,30 100,30 Q82,30 65,8Z"/></svg>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                            <span class="text-[.62rem] tracking-[.28em] uppercase text-c-gold/[.65] mb-4">✦ Les Héros de l'Ombre ✦</span>
-                            <p class="font-bebas text-[2rem] leading-[.9] tracking-[.04em] text-white">LES HÉROS</p>
-                            <p class="font-bebas text-[2rem] leading-[.9] tracking-[.04em] text-c-red">DE L'OMBRE</p>
-                            <span class="text-[.6rem] tracking-[.22em] uppercase text-white/[.3] mt-4">La chaîne · Cinéma &amp; Séries</span>
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/[.55] to-transparent pointer-events-none"></div>
+                <!-- 01 — T-SHIRT L'INCONNU -->
+                <div class="tshirt-card reveal d1 border border-c-bdr/[.5] overflow-hidden" data-product="T-SHIRT L'INCONNU" data-price="24.90">
+                    <div class="relative overflow-hidden" style="aspect-ratio:3/2">
+                        <img src="IMG_6154_crop.jpg" alt="T-shirt Les Héros de l'Ombre — face et dos"
+                             style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/[.55] via-transparent to-transparent pointer-events-none"></div>
                     </div>
                     <div class="bg-c-dk2 p-[.85rem_.95rem]">
                         <div class="flex items-center justify-between mb-[.15rem]">
-                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">RÔLE DISCRET</h3>
-                            <span class="font-bebas text-[1rem] text-c-gold">29,90€</span>
+                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">T-SHIRT L'INCONNU</h3>
+                            <span class="font-bebas text-[1rem] text-c-gold">24,90€</span>
                         </div>
-                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">T-Shirt Unisexe</p>
+                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">T-Shirt Unisexe · Noir</p>
                         <div class="size-row flex items-center gap-[.28rem] flex-wrap">
                             <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">S</button>
                             <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">M</button>
@@ -841,92 +839,43 @@
                     </div>
                 </div>
 
-                <!-- 02 — PAS DE SCÈNE (light) -->
-                <div class="tshirt-card reveal d2 border border-c-bdr/[.5] overflow-hidden" data-product="PAS DE SCÈNE" data-price="29.90">
-                    <div class="relative bg-[#f0e8d3]" style="aspect-ratio:3/3.6">
-                        <svg class="absolute inset-0 w-full h-full opacity-[.06] text-[#241B14]" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M65,8 L5,48 L35,58 L35,188 L165,188 L165,58 L195,48 L135,8 Q118,30 100,30 Q82,30 65,8Z"/></svg>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
-                            <p class="font-bebas text-[1.85rem] leading-[.88] tracking-[.02em] text-[#1a1208]">PAS DE</p>
-                            <p class="font-bebas text-[1.85rem] leading-[.88] tracking-[.02em] text-[#1a1208]">SCÈNE.</p>
-                            <div class="w-8 h-[1.5px] bg-c-red my-[.55rem]"></div>
-                            <p class="font-bebas text-[1.85rem] leading-[.88] tracking-[.02em] text-[#1a1208]">PAS DE</p>
-                            <p class="font-bebas text-[1.85rem] leading-[.88] tracking-[.02em] text-[#1a1208]">LÉGENDE.</p>
-                            <span class="text-[.6rem] tracking-[.2em] uppercase text-[#1a1208]/[.4] mt-4">Les Héros de l'ombre</span>
-                        </div>
+                <!-- 02 — MUG L'INCONNU -->
+                <div class="tshirt-card reveal d2 border border-c-bdr/[.5] overflow-hidden" data-product="MUG L'INCONNU" data-price="14.90">
+                    <div class="relative overflow-hidden" style="aspect-ratio:3/2">
+                        <img src="IMG_6155_crop.jpg" alt="Mug Les Héros de l'Ombre"
+                             style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/[.4] via-transparent to-transparent pointer-events-none"></div>
                     </div>
                     <div class="bg-c-dk2 p-[.85rem_.95rem]">
                         <div class="flex items-center justify-between mb-[.15rem]">
-                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">PAS DE SCÈNE</h3>
-                            <span class="font-bebas text-[1rem] text-c-gold">29,90€</span>
+                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">MUG L'INCONNU</h3>
+                            <span class="font-bebas text-[1rem] text-c-gold">14,90€</span>
                         </div>
-                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">T-Shirt Unisexe</p>
+                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">Mug céramique · 350 ml</p>
                         <div class="size-row flex items-center gap-[.28rem] flex-wrap">
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">S</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">M</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">L</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">XL</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">XXL</button>
+                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">UNIQUE</button>
                             <button class="add-btn ml-auto w-[24px] h-[24px] bg-c-red flex items-center justify-center text-white text-[1rem] leading-none font-light flex-shrink-0" data-action="add-to-cart" aria-label="Ajouter au panier">+</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 03 — DANS L'OMBRE (dark) -->
-                <div class="tshirt-card reveal d3 border border-c-bdr/[.5] overflow-hidden" data-product="DANS L'OMBRE" data-price="29.90">
-                    <div class="relative bg-[#0d0b09]" style="aspect-ratio:3/3.6">
-                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=50"
-                             alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-[.16] select-none pointer-events-none">
-                        <svg class="absolute inset-0 w-full h-full opacity-[.05] text-white" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M65,8 L5,48 L35,58 L35,188 L165,188 L165,58 L195,48 L135,8 Q118,30 100,30 Q82,30 65,8Z"/></svg>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                            <p class="font-bebas text-[1.65rem] leading-[.9] tracking-[.03em] text-white">DANS L'OMBRE,</p>
-                            <p class="font-bebas text-[1.65rem] leading-[.9] tracking-[.03em] text-white">ILS FONT</p>
-                            <p class="font-bebas text-[1.65rem] leading-[.9] tracking-[.03em] text-c-gold">L'HISTOIRE.</p>
-                            <span class="text-[.6rem] tracking-[.28em] uppercase text-white/[.3] mt-4">LA CHAÎNE</span>
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/[.55] to-transparent pointer-events-none"></div>
+                <!-- 03 — BADGE L'INCONNU -->
+                <div class="tshirt-card reveal d3 border border-c-bdr/[.5] overflow-hidden" data-product="BADGE L'INCONNU" data-price="5.90">
+                    <div class="relative overflow-hidden" style="aspect-ratio:3/2">
+                        <img src="IMG_6156_crop.jpg" alt="Badge épingle Les Héros de l'Ombre"
+                             style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/[.4] via-transparent to-transparent pointer-events-none"></div>
                     </div>
                     <div class="bg-c-dk2 p-[.85rem_.95rem]">
                         <div class="flex items-center justify-between mb-[.15rem]">
-                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">DANS L'OMBRE</h3>
-                            <span class="font-bebas text-[1rem] text-c-gold">29,90€</span>
+                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">BADGE L'INCONNU</h3>
+                            <span class="font-bebas text-[1rem] text-c-gold">5,90€</span>
                         </div>
-                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">T-Shirt Unisexe</p>
+                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">Badge épingle · Pack de 5</p>
                         <div class="size-row flex items-center gap-[.28rem] flex-wrap">
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">S</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">M</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">L</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">XL</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">XXL</button>
-                            <button class="add-btn ml-auto w-[24px] h-[24px] bg-c-red flex items-center justify-center text-white text-[1rem] leading-none font-light flex-shrink-0" data-action="add-to-cart" aria-label="Ajouter au panier">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 04 — PREMIER IMPACT (light) -->
-                <div class="tshirt-card reveal d4 border border-c-bdr/[.5] overflow-hidden" data-product="PREMIER IMPACT" data-price="29.90">
-                    <div class="relative bg-[#f0e8d3]" style="aspect-ratio:3/3.6">
-                        <svg class="absolute inset-0 w-full h-full opacity-[.06] text-[#241B14]" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M65,8 L5,48 L35,58 L35,188 L165,188 L165,58 L195,48 L135,8 Q118,30 100,30 Q82,30 65,8Z"/></svg>
-                        <!-- clapperboard icon hint -->
-                        <svg class="absolute bottom-6 right-5 w-[38px] opacity-[.12] text-[#241B14]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 6h16v2H4V6zm0 5h16v9H4v-9zm2 2v5h12v-5H6zm-2-9h16V2H4v2zm14-2H6v2h12V2zM8 2l-2 2h2l2-2H8zm4 0-2 2h2l2-2h-2z"/></svg>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
-                            <p class="font-bebas text-[1.75rem] leading-[.88] tracking-[.02em] text-[#1a1208]">SECOND RÔLE,</p>
-                            <p class="font-bebas text-[1.75rem] leading-[.88] tracking-[.02em] text-c-red">PREMIER</p>
-                            <p class="font-bebas text-[1.75rem] leading-[.88] tracking-[.02em] text-[#1a1208]">IMPACT.</p>
-                            <span class="text-[.6rem] tracking-[.2em] uppercase text-[#1a1208]/[.4] mt-4">Les Héros de l'ombre</span>
-                        </div>
-                    </div>
-                    <div class="bg-c-dk2 p-[.85rem_.95rem]">
-                        <div class="flex items-center justify-between mb-[.15rem]">
-                            <h3 class="font-bebas text-[1.05rem] tracking-[.08em]">PREMIER IMPACT</h3>
-                            <span class="font-bebas text-[1rem] text-c-gold">29,90€</span>
-                        </div>
-                        <p class="text-[.72rem] tracking-[.18em] uppercase text-c-gry mb-[.65rem]">T-Shirt Unisexe</p>
-                        <div class="size-row flex items-center gap-[.28rem] flex-wrap">
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">S</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">M</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">L</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">XL</button>
-                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">XXL</button>
+                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">×1</button>
+                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">×3</button>
+                            <button class="size-btn font-bebas text-[.8rem] tracking-[.05em] border border-c-bdr/[.55] px-[.5rem] py-[.22rem] text-c-glt2">×5</button>
                             <button class="add-btn ml-auto w-[24px] h-[24px] bg-c-red flex items-center justify-center text-white text-[1rem] leading-none font-light flex-shrink-0" data-action="add-to-cart" aria-label="Ajouter au panier">+</button>
                         </div>
                     </div>
@@ -1307,7 +1256,7 @@
             div.innerHTML =
                 '<div class="flex-1 min-w-0">'
               +   '<p class="font-bebas text-[.95rem] tracking-[.08em] text-[#fdf8f2] leading-tight">' + item.name + '</p>'
-              +   '<p class="text-[.72rem] tracking-[.14em] text-[#8a7a6a] uppercase mt-[.2rem]">T-Shirt Unisexe · Taille ' + item.size + '</p>'
+              +   '<p class="text-[.72rem] tracking-[.14em] text-[#8a7a6a] uppercase mt-[.2rem]">' + (item.size === 'UNIQUE' ? 'Taille unique' : 'Taille ' + item.size) + '</p>'
               +   '<div class="flex items-center gap-[.4rem] mt-[.55rem]">'
               +     '<button class="cart-qty-btn" data-action="dec" data-idx="' + idx + '" aria-label="Réduire la quantité">−</button>'
               +     '<span class="font-bebas text-[.92rem] text-[#fdf8f2] w-7 text-center select-none">' + item.qty + '</span>'

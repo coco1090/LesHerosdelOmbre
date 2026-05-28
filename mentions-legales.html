@@ -45,6 +45,10 @@
     /* États JS-toggled + pseudo-éléments non gérables par Tailwind */
     :focus{outline:none}
     :focus-visible{outline:2px solid #8B2010;outline-offset:3px;border-radius:2px}
+    /* ── Curseur rouge ── */
+    *,*::before,*::after{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='18' viewBox='0 0 13 18'%3E%3Cpath d='M0 0L0 14L4 10L7 18L10 16.5L7 9L12 9Z' fill='%238B2010' stroke='%23fdf8f2' stroke-width='1.1' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0,default}
+    a,button,[role='button'],label[for],select,input[type='checkbox'],input[type='radio'],input[type='submit'],input[type='button'],.cursor-pointer{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='16' viewBox='0 0 11 16'%3E%3Cpath d='M4 0C2.9 0 2 .9 2 2V8.5C1.7 8.2 1.4 8 1 8 0.4 8 0 8.4 0 9V12A4 4 0 004 16H6A5 5 0 0011 11V8A1.5 1.5 0 008 8V7A1.5 1.5 0 005 7V2C5 .9 4.6 0 4 0Z' fill='%238B2010' stroke='%23fdf8f2' stroke-width='0.5'/%3E%3C/svg%3E") 4 0,pointer}
+    input[type='text'],input[type='email'],input[type='tel'],textarea{cursor:text}
     body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     .floating-btn{opacity:0;pointer-events:none;transform:translateY(14px);transition:all .35s cubic-bezier(.22,1,.36,1)}
     .floating-btn.visible{opacity:1;pointer-events:all;transform:translateY(0)}
