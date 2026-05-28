@@ -16,7 +16,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,11 +32,8 @@
             'c-crm':'#f5efe6','c-wht':'#fdf8f2','c-bdr':'#3a2e24',
           },
           fontFamily: {
-            sans: ['Inter','sans-serif'],
+            sans: ['"Bebas Neue"','sans-serif'],
             bebas: ['"Bebas Neue"','sans-serif'],
-            sign: ['SignPainter','"SignPainter HouseScript"','cursive'],
-            cormorant: ['"Cormorant Garamond"','serif'],
-            playfair: ['"Playfair Display"','serif'],
           },
         }
       }
@@ -209,7 +206,7 @@
     .cart-remove:hover{color:#8B2010}
     .cart-checkout-btn{display:block;width:100%;text-align:center;background:#8B2010;font-family:"Bebas Neue",sans-serif;letter-spacing:.25em;color:#fdf8f2;padding:1rem;font-size:.9rem;border:none;cursor:pointer;transition:background .18s}
     .cart-checkout-btn:hover{background:#661508}
-    .cart-badge{width:18px;height:18px;background:#8B2010;border-radius:50%;font-size:.55rem;font-weight:700;color:#fff;display:none;align-items:center;justify-content:center;font-family:Inter,sans-serif;position:absolute;top:-5px;right:-5px;line-height:1}
+    .cart-badge{width:18px;height:18px;background:#8B2010;border-radius:50%;font-size:.55rem;font-weight:700;color:#fff;display:none;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;position:absolute;top:-5px;right:-5px;line-height:1}
 
     /* ── FAQ accordion ── */
     .faq-answer{overflow:hidden;max-height:0;transition:max-height .5s cubic-bezier(.22,1,.36,1)}
@@ -318,7 +315,7 @@
                 id="menuClose" aria-label="Fermer le menu">
             <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2"/></svg>
         </button>
-        <a href="#hero" class="font-sign text-[1.25rem] tracking-[.03em] flex items-center gap-[.5rem] no-underline text-c-wht leading-[1.2]" aria-label="Retour en haut de page">
+        <a href="#hero" class="font-bebas text-[1.25rem] tracking-[.03em] flex items-center gap-[.5rem] no-underline text-c-wht leading-[1.2]" aria-label="Retour en haut de page">
             <img src="logo.svg" alt="" class="w-10 h-10 flex-shrink-0 drop-shadow-[0_2px_8px_rgba(0,0,0,.4)]" aria-hidden="true">
             Les Héros <span class="text-c-gold">de l'Ombre</span>
         </a>
@@ -411,8 +408,8 @@
 
         <div class="absolute bottom-0 left-0 right-0 z-[5] text-c-wht px-12 pb-14 max-[680px]:px-[1.4rem] max-[680px]:pb-10 pointer-events-none">
             <span class="anim-tag inline-flex items-center gap-2 text-[.72rem] tracking-[.28em] uppercase bg-c-red px-[.9rem] py-[.3rem] mb-5 pointer-events-none max-[480px]:text-[.62rem] max-[480px]:tracking-[.18em] max-[480px]:px-[.7rem]">✦ Chaîne YouTube · Cinéma &amp; Séries</span>
-            <h1 class="anim-h1 font-sign text-[clamp(3.8rem,7vw,7rem)] tracking-[.02em] leading-[.95] [text-shadow:0_4px_28px_rgba(0,0,0,.7)] max-[680px]:text-[clamp(2.6rem,9vw,4rem)]">
-                Les Héros<br><em class="font-cormorant italic font-semibold text-c-gold text-[.82em] tracking-[.06em]">de l'Ombre</em>
+            <h1 class="anim-h1 font-bebas text-[clamp(3.8rem,7vw,7rem)] tracking-[.02em] leading-[.95] [text-shadow:0_4px_28px_rgba(0,0,0,.7)] max-[680px]:text-[clamp(2.6rem,9vw,4rem)]">
+                Les Héros<br><em class="font-bebas italic font-semibold text-c-gold text-[.82em] tracking-[.06em]">de l'Ombre</em>
             </h1>
             <p class="anim-sub text-[.88rem] tracking-[.04em] mt-[1.1rem] max-w-[480px] leading-[1.65] font-light text-white/[.85] max-[680px]:max-w-full max-[680px]:text-[.82rem]">Ces personnages secondaires sans qui les grandes œuvres ne seraient rien. Analyse, passion, cinéphilie.</p>
             <a href="#videos" class="anim-cta inline-flex items-center gap-[.65rem] mt-7 bg-c-red text-c-wht font-bebas text-[.95rem] tracking-[.22em] px-[1.8rem] py-[.8rem] pointer-events-auto cursor-pointer transition hover:bg-c-rdk hover:-translate-y-[2px] max-[680px]:w-full max-[680px]:justify-center">
@@ -742,10 +739,10 @@
 
     <!-- ── CITATION ── -->
     <div class="bg-c-crm text-center py-24 px-10 relative overflow-hidden max-[680px]:py-16 max-[680px]:px-[1.4rem]">
-        <span aria-hidden="true" class="absolute top-[-4rem] left-1/2 -translate-x-1/2 font-playfair text-[22rem] text-c-gold/[.06] leading-none pointer-events-none select-none">&#x201C;</span>
+        <span aria-hidden="true" class="absolute top-[-4rem] left-1/2 -translate-x-1/2 font-bebas text-[22rem] text-c-gold/[.06] leading-none pointer-events-none select-none">&#x201C;</span>
         <div class="max-w-[800px] mx-auto relative z-[1]">
             <div class="w-10 h-[2px] bg-c-gold mx-auto mb-8" aria-hidden="true"></div>
-            <blockquote class="reveal font-cormorant italic font-semibold text-[clamp(1.5rem,3.2vw,2.2rem)] text-c-blk mb-8 leading-[1.58]">
+            <blockquote class="reveal font-bebas italic font-semibold text-[clamp(1.5rem,3.2vw,2.2rem)] text-c-blk mb-8 leading-[1.58]">
                 Un bon film repose toujours sur de grands personnages secondaires.
             </blockquote>
             <cite class="reveal d1 text-[.82rem] font-bold tracking-[.32em] uppercase text-c-gold not-italic">— Principe de la chaîne</cite>
@@ -756,7 +753,7 @@
     <section class="bg-c-blk text-c-wht px-[clamp(1.5rem,5vw,4rem)] pt-[clamp(3rem,6vw,5rem)] pb-[clamp(2rem,4vw,3.5rem)] max-[680px]:px-[1.4rem] max-[680px]:pt-10" id="videos">
         <div class="reveal text-center mb-10">
             <span class="block text-[.85rem] tracking-[.3em] uppercase text-c-gold mb-3">✦ La chaîne</span>
-            <h2 class="font-sign text-[3.2rem] tracking-[.02em] leading-none">NOUS DÉCOUVRIR</h2>
+            <h2 class="font-bebas text-[3.2rem] tracking-[.02em] leading-none">NOUS DÉCOUVRIR</h2>
         </div>
 
         <div class="grid grid-cols-2 gap-[1.2rem] max-w-[600px] mx-auto max-[480px]:grid-cols-1 max-[480px]:gap-[.6rem]">
@@ -925,7 +922,7 @@
 
             <div class="reveal text-center mb-12">
                 <span class="block text-[.85rem] tracking-[.3em] uppercase text-c-gold mb-3">✦ Vos questions</span>
-                <h2 class="font-sign text-[3.2rem] tracking-[.02em] leading-none">FAQ</h2>
+                <h2 class="font-bebas text-[3.2rem] tracking-[.02em] leading-none">FAQ</h2>
             </div>
 
             <div class="space-y-0 divide-y divide-c-bdr/[.6]">
@@ -979,7 +976,7 @@
         <div class="reveal max-w-[860px] mx-auto flex items-center justify-between gap-10 flex-wrap relative z-[1] max-[860px]:flex-col max-[860px]:items-start">
             <div>
                 <span class="block text-[.85rem] tracking-[.28em] uppercase text-white/[.65] mb-3">✦ Rejoindre la communauté</span>
-                <h2 class="font-sign text-[2.6rem] tracking-[.02em] text-c-wht leading-none mb-[.6rem] max-[680px]:text-[2rem]">Abonnez-vous à la chaîne</h2>
+                <h2 class="font-bebas text-[2.6rem] tracking-[.02em] text-c-wht leading-none mb-[.6rem] max-[680px]:text-[2rem]">Abonnez-vous à la chaîne</h2>
                 <p class="text-[.82rem] text-white/[.75] max-w-[440px] leading-[1.65]">Nouveaux épisodes régulièrement. Personnages oubliés, analyses profondes, cinéma vivant.</p>
             </div>
             <a class="inline-flex items-center gap-[.7rem] flex-shrink-0 bg-c-wht text-c-red font-bebas text-[1.1rem] tracking-[.2em] px-[2.2rem] py-[.9rem] transition hover:bg-c-crm hover:scale-[1.03] whitespace-nowrap max-[860px]:self-start"
@@ -995,7 +992,7 @@
         <div class="grid [grid-template-columns:1.6fr_1fr] gap-16 py-16 px-12 max-w-[1100px] mx-auto max-[860px]:grid-cols-1 max-[860px]:gap-10 max-[680px]:px-[1.4rem] max-[680px]:pt-10 max-[680px]:pb-8 max-[680px]:gap-8">
 
             <div class="footer-brand">
-                <a href="#hero" class="inline-flex items-center gap-2 mb-5 font-sign text-[1.2rem] tracking-[.03em] text-c-wht no-underline transition hover:opacity-[.82] group" aria-label="Retour en haut de page">
+                <a href="#hero" class="inline-flex items-center gap-2 mb-5 font-bebas text-[1.2rem] tracking-[.03em] text-c-wht no-underline transition hover:opacity-[.82] group" aria-label="Retour en haut de page">
                     <img src="logo.svg" alt="" class="w-8 h-8 flex-shrink-0 drop-shadow-[0_1px_6px_rgba(0,0,0,.4)] transition duration-300 group-hover:scale-110 group-hover:-rotate-[5deg]" aria-hidden="true">
                     Les Héros de l'Ombre
                 </a>
