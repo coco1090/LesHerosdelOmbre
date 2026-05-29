@@ -79,6 +79,36 @@
     /* Font rendering */
     body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* ═══ RESPONSIVE MOBILE ═══ */
+
+    /* ── ≤700px : info cards compact ── */
+    @media(max-width:700px){
+        .info-card{padding-top:1.2rem;padding-bottom:1.2rem}
+    }
+
+    /* ── ≤680px : mobile principal ── */
+    @media(max-width:680px){
+        /* Back-to-top : repositionner au-dessus de la barre système */
+        .back-to-top{bottom:1.25rem !important;right:1.25rem !important}
+
+        /* Localisation : 1 colonne, carte en premier */
+        #localisation .grid{grid-template-columns:1fr !important;gap:1.5rem !important}
+        #localisation .grid > div:first-child{order:2}
+        #localisation .grid > div:last-child{order:1}
+
+        /* Formulaire : anti-zoom iOS (empêche le zoom auto à < 16px) */
+        input,select,textarea{font-size:16px !important}
+
+        /* Footer : padding compact */
+        footer > div{max-width:100%}
+    }
+
+    /* ── ≤480px : très petit mobile ── */
+    @media(max-width:480px){
+        /* Page header : badge doré centré */
+        #localisation .flex.items-baseline{flex-direction:column;gap:.4rem}
+    }
     </style>
 </head>
 <body class="text-[14px] text-c-blk bg-c-wht leading-[1.6]">
@@ -340,9 +370,6 @@
                 </div>
 
             </div>
-
-            <!-- Mention responsive (cache colonnes sur mobile) -->
-            <style>@media(max-width:768px){#localisation .grid{grid-template-columns:1fr!important}}</style>
 
         </div>
     </div>

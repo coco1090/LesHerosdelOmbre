@@ -63,6 +63,35 @@
     .legal-section-num{display:inline-block;transition:color .2s}
     section:target .legal-section-num{color:#8B2010}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* ═══ RESPONSIVE MOBILE ═══ */
+
+    /* ── ≤900px : sommaire non-sticky, séparation visuelle ── */
+    @media(max-width:900px){
+        aside{
+            border-left:none !important;
+            padding-left:0 !important;
+            padding-bottom:1.5rem;
+            border-bottom:1px solid #3a2e24;
+            margin-bottom:.5rem;
+        }
+        /* TOC en grille 2 colonnes sur tablette */
+        #tocNav{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem .75rem}
+    }
+
+    /* ── ≤680px : mobile ── */
+    @media(max-width:680px){
+        /* Back-to-top repositionné */
+        .floating-btn{bottom:1.25rem !important;right:1.25rem !important}
+
+        /* Grille éditeur 1 colonne */
+        .grid.grid-cols-2{grid-template-columns:1fr !important}
+    }
+
+    /* ── ≤480px : TOC 1 colonne ── */
+    @media(max-width:480px){
+        #tocNav{grid-template-columns:1fr}
+    }
     </style>
 </head>
 <body class="text-[14px] text-c-blk bg-c-wht leading-[1.65]">

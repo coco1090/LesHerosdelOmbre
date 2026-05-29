@@ -246,7 +246,7 @@
         .about-main-grid{gap:2rem}
 
         /* Shorts : wrapper pleine hauteur naturelle */
-        .short-iframe{width:100%;aspect-ratio:3/4;display:block;border:0}
+        .short-iframe{width:100%;aspect-ratio:1/1;display:block;border:0}
 
         /* Stats : padding compact */
         .stat-item{padding-left:.75rem;padding-right:.75rem}
@@ -276,6 +276,17 @@
 
         /* Sections : padding vertical réduit */
         .section-pt{padding-top:2.5rem}
+    }
+
+    /* ── Très petit mobile ── */
+    @media(max-width:380px){
+        .hero-nav-left{gap:.4rem}
+        .hero-nav-right{gap:.5rem}
+    }
+
+    /* ── Back-to-top : repositionner sur mobile ── */
+    @media(max-width:680px){
+        #backToTop{bottom:1.25rem !important;right:1.25rem !important}
     }
     </style>
 </head>
@@ -763,7 +774,7 @@
             <h2 class="font-bebas text-[3.2rem] tracking-[.02em] leading-none">NOUS DÉCOUVRIR</h2>
         </div>
 
-        <div class="grid grid-cols-2 gap-[1.2rem] max-w-[600px] mx-auto max-[480px]:grid-cols-1 max-[480px]:gap-[.6rem]">
+        <div class="grid grid-cols-2 gap-[1.2rem] max-w-[600px] mx-auto max-[480px]:gap-[.5rem]">
 
             <div class="related-card reveal d1 block relative">
                 <div class="related-card-thumb bg-[#1a1a1a] overflow-hidden relative">
