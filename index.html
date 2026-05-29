@@ -676,22 +676,17 @@
 
             <div class="reveal d2 flex flex-col gap-[1.1rem] max-[1024px]:hidden">
                 <div class="trailer-label text-[.76rem] tracking-[.22em] uppercase font-bold flex items-center gap-[.55rem]">Dernière vidéo</div>
-                <a class="relative [aspect-ratio:16/9] overflow-hidden cursor-pointer bg-black block group"
-                   href="https://www.youtube.com/@LesH%C3%A9rosDelOmbre"
-                   target="_blank" rel="noopener noreferrer"
-                   aria-label="Voir « Portrait du parfait mentor » sur YouTube (nouvel onglet)">
-                    <img src="miniature.principale.jpg"
-                         alt="Doc Hudson — Cars, le mentor dans l'ombre"
-                         class="w-full h-full object-contain transition duration-[400ms] group-hover:opacity-60">
-                    <div class="absolute inset-0 flex items-center justify-center z-[2]" aria-hidden="true">
-                        <div class="w-14 h-14 rounded-full bg-c-red flex items-center justify-center shadow-[0_8px_28px_rgba(232,76,61,.5)] transition duration-[250ms] group-hover:scale-[1.14] group-hover:shadow-[0_12px_40px_rgba(232,76,61,.7)]">
-                            <svg viewBox="0 0 24 24" class="w-[22px] h-[22px] fill-white ml-[3px]"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-[.6rem] right-[.6rem] z-[3] w-7 h-7 bg-black/[.55] flex items-center justify-center transition hover:bg-c-red" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" class="w-3 h-3 fill-white"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-                    </div>
-                </a>
+                <div class="relative [aspect-ratio:16/9] overflow-hidden bg-black">
+                    <iframe
+                        src="https://www.youtube.com/embed/lhTxruI13Bo?si=-wlEF8t0SRxVU5UR&rel=0&modestbranding=1"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        loading="lazy"
+                        class="absolute inset-0 w-full h-full border-0">
+                    </iframe>
+                </div>
                 <!-- Titre + résumé de la vidéo -->
                 <div class="mt-[.1rem]">
                     <h3 class="font-bebas text-[1.1rem] tracking-[.07em] text-c-blk leading-snug mb-[.5rem]">PORTRAIT DU PARFAIT MENTOR</h3>
